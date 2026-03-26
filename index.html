@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>MedPlex MDCAT Preparation Academy | Computerized Assessment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- KaTeX (kept for compatibility) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ]
+        });"></script>
+    <style>
+        /* ========== EXACT UI FROM ORIGINAL – PRESERVED ========== */
+        :root {
+            --primary-blue: #0c343d;
+            --secondary-blue: #134f5c;
+            --dark-blue: #0c343d;
+            --light-blue: #e0f2fe;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-teal: #14b8a6;
+            --accent-yellow: #fbbf24;
+            --accent-amber: #f59e0b;
+            --vibrant-blue: #3b82f6;
+            --vibrant-green: #22c55e;
+            --vibrant-purple: #a855f7;
+            --vibrant-pink: #e879f9;
+            --gradient-blue: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            --gradient-green: linear-gradient(135deg, var(--accent-green), #34d399);
+            --gradient-orange: linear-gradient(135deg, var(--accent-orange), #f97316);
+            --gradient-red: linear-gradient(135deg, var(--accent-red), #f87171);
+            --gradient-purple: linear-gradient(135deg, var(--accent-purple), #a78bfa);
+            --gradient-pink: linear-gradient(135deg, var(--accent-pink), #f472b6);
+            --gradient-teal: linear-gradient(135deg, var(--accent-teal), #2dd4bf);
+            --gradient-yellow: linear-gradient(135deg, var(--accent-yellow), #f59e0b);
+            --gradient-vibrant: linear-gradient(135deg, #0c343d, #134f5c, #20124d);
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 2px 5px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 5px 15px -3px rgba(0, 0, 0, 0.1);
+            --parser-primary: #2563eb;
+            --parser-secondary: #3b82f6;
+            --parser-success: #10b981;
+            --parser-light: #f8fafc;
+            --parser-bg: #f0f9ff;
+            --parser-card: #ffffff;
+            --parser-text: #1e40af;
+            --parser-border: 0.75px solid #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        input, textarea, .btn, .question-nav-item, .option {
+            user-select: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+        }
+
+        .question-text, .reasoning, .all-mcq-item, .all-mcq-option, .all-mcq-reasoning,
+        .promo-banner p, .promo-banner h2, .quiz-info, .timer, .result-card, .submission-message p {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px;
+            color: #0c343d;
+            font-size: 8.25px;
+            overflow-x: hidden;
+        }
+
+        body.laptop-view {
+            font-size: 12.375px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .device-toggle {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: var(--gradient-purple);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.3);
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .device-toggle:hover { opacity: 1; }
+
+        .logo { text-align: center; margin-bottom: 9px; }
+        .logo h1 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+            margin-bottom: 1.5px;
+            background: var(--gradient-vibrant);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo p {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.525rem;
+        }
+
+        .page {
+            background: white;
+            border-radius: 9px;
+            padding: 9px;
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            display: none;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            backdrop-filter: blur(10px);
+        }
+        .active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .promo-banner {
+            background: var(--gradient-vibrant);
+            color: white;
+            padding: 11.25px;
+            border-radius: 7.5px;
+            margin-bottom: 11.25px;
+            text-align: center;
+            font-size: 0.45rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .promo-banner::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        .promo-banner h2 { font-size: 0.675rem; margin-bottom: 6px; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); position: relative; z-index: 2; }
+        .promo-banner p { line-height: 1.5; text-align: justify; position: relative; z-index: 2; }
+
+        .form-group { margin-bottom: 6px; }
+        .form-label { display: block; margin-bottom: 1.5px; font-weight: 600; color: var(--dark-blue); font-size: 0.525rem; }
+        .form-input, .form-select {
+            width: 100%; padding: 4.5px 6.75px; border: 1.5px solid var(--light-blue); border-radius: 3.75px;
+            font-size: 0.525rem; background: #f8fafc; transition: all 0.2s;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(12,52,61,0.15);
+        }
+        .input-container { position: relative; }
+        .password-container .form-input { padding-right: 22.5px; }
+        .input-icon { position: absolute; right: 7.5px; top: 50%; transform: translateY(-50%); color: var(--primary-blue); font-size: 0.525rem; cursor: pointer; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; padding: 4.5px 7.5px; border: none;
+            border-radius: 6px; font-weight: 700; font-size: 0.525rem; cursor: pointer; transition: all 0.2s;
+            text-decoration: none; gap: 3px; width: 100%; box-shadow: var(--shadow); position: relative; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .btn::before {
+            content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s;
+        }
+        .btn:hover::before { left: 100%; }
+
+        .btn-primary { background: var(--gradient-blue); color: white; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(12,52,61,0.2); }
+
+        /* WhatsApp button – exact colors */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-purple { background: var(--gradient-purple); color: white; }
+        .btn-purple:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(139,92,246,0.2); }
+        .btn-red { background: var(--gradient-red); color: white; }
+        .btn-red:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(239,68,68,0.2); }
+        .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(245,158,11,0.2); }
+
+        /* Quiz notification */
+        .quiz-notification {
+            position: fixed; top: 15px; right: 15px; background: white; padding: 11.25px; border-radius: 7.5px;
+            box-shadow: var(--shadow-xl); z-index: 1000; display: none; max-width: 225px;
+            border-left: 3.75px solid var(--accent-green); animation: slideInRight 0.3s ease; transform: translateX(100%);
+        }
+        .quiz-notification.show { display: block; transform: translateX(0); }
+        .quiz-notification.warning { border-left-color: var(--accent-orange); }
+        .quiz-notification.error { border-left-color: var(--accent-red); }
+        .quiz-notification-content { display: flex; flex-direction: column; gap: 7.5px; }
+        .quiz-notification-title { font-weight: 700; font-size: 0.6rem; color: var(--dark-blue); }
+        .quiz-notification-message { font-size: 0.525rem; color: #4b5563; }
+        .quiz-notification-actions { display: flex; gap: 6px; justify-content: flex-end; }
+        .quiz-notification-btn { padding: 3px 6px; border-radius: 3px; font-size: 0.4875rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; border: 1px solid rgba(0,0,0,0.1); }
+        .quiz-notification-btn.primary { background: var(--gradient-blue); color: white; }
+        .quiz-notification-btn.secondary { background: #f3f4f6; color: #4b5563; }
+        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+        .main-page-buttons { display: grid; gap: 6px; margin-top: 9px; }
+        .quiz-access-section { display: none; flex-direction: column; gap: 6px; margin-top: 9px; }
+
+        .quiz-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; padding-bottom: 4.5px; border-bottom: 1.5px solid var(--light-blue); }
+        .quiz-title-container { display: flex; flex-direction: column; gap: 2.25px; width: 80%; }
+        .quiz-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.525rem; color: var(--dark-blue); font-weight: 600; }
+        .timer-container { display: flex; gap: 4.5px; justify-content: flex-end; width: 100%; margin-bottom: 6px; }
+        .timer.total-timer { background: var(--gradient-orange); color: white; padding: 2.25px 4.5px; border-radius: 7.5px; font-weight: 700; font-size: 0.525rem; box-shadow: var(--shadow); white-space: nowrap; border: 1px solid rgba(0,0,0,0.1); }
+        .progress-container { width: 100%; height: 4.5px; background: #e5e7eb; border-radius: 2.25px; overflow: hidden; margin-bottom: 6px; box-shadow: var(--shadow); }
+        .progress-bar { height: 100%; border-radius: 2.25px; transition: width 0.4s ease; background: var(--gradient-vibrant); }
+        .question-nav { display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5px, 1fr)); gap: 2.25px; margin-bottom: 6px; }
+        .question-nav-item { width: 10.5px; height: 10.5px; display: flex; align-items: center; justify-content: center; border-radius: 2.25px; font-weight: 700; font-size: 0.375rem; cursor: pointer; background: white; border: 1.5px solid var(--light-blue); transition: all 0.2s; }
+        .question-nav-item.current { background: var(--gradient-vibrant); color: white; border-color: var(--primary-blue); transform: scale(1.1); }
+        .question-nav-item.solved { background: var(--gradient-green); color: white; border-color: var(--accent-green); }
+        .question-nav-item.visited { background: var(--gradient-orange); color: white; border-color: var(--accent-orange); }
+        .question-container { margin-bottom: 6px; }
+        .question-text { font-size: 0.5625rem; font-weight: 700; margin-bottom: 4.5px; color: var(--dark-blue); }
+        .options-container { display: grid; grid-template-columns: 1fr; gap: 3px; margin-bottom: 6px; }
+        .option { padding: 3.75px 6px; border: 1.5px solid var(--light-blue); border-radius: 3.75px; cursor: pointer; transition: all 0.2s; font-weight: 500; background: #f8fafc; font-size: 0.525rem; position: relative; }
+        .option:hover { border-color: var(--primary-blue); background: #e0f2fe; transform: translateY(-1px); }
+        .option.selected { border-color: var(--primary-blue); background: #dbeafe; }
+        .reasoning { background: #f8fafc; border-radius: 3.75px; padding: 6px; margin-top: 6px; display: none; border-left: 2.25px solid var(--primary-blue); font-size: 0.525rem; }
+        .reasoning-title { font-weight: 700; margin-bottom: 3px; color: var(--dark-blue); font-size: 0.5625rem; }
+        .navigation-buttons { display: flex; flex-direction: column; gap: 3px; margin-top: 9px; }
+        .nav-btn { padding: 3.75px 5.25px; border-radius: 3.75px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; font-size: 0.525rem; display: flex; align-items: center; gap: 2.25px; justify-content: center; width: 100%; border: 1px solid rgba(0,0,0,0.1); }
+        .btn-back { background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; }
+        .btn-next { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-reasoning { background: var(--gradient-purple); color: white; }
+        .btn-reasoning.disabled { background: #6b7280; color: white; cursor: not-allowed; opacity: 0.6; }
+        .btn-submit { background: var(--gradient-green); color: white; }
+
+        /* Results page – updated DMC card */
+        .results-header-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 3.75px;
+            margin-bottom: 9px;
+        }
+        .results-header-buttons .btn {
+            padding: 3px 4.5px;
+            font-size: 0.4875rem;
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .submission-message {
+            background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+            border-radius: 6px;
+            padding: 18px;
+            text-align: center;
+            margin-bottom: 9px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-green);
+        }
+        .submission-message h2 {
+            font-size: 0.9rem;
+            margin-bottom: 9px;
+            color: var(--accent-green);
+        }
+        .submission-message p {
+            font-size: 0.6rem;
+            margin-bottom: 6px;
+            color: var(--dark-blue);
+        }
+        .submission-icon {
+            font-size: 2.25rem;
+            color: var(--accent-green);
+            margin-bottom: 9px;
+        }
+        .result-card {
+            background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+            border-radius: 6px;
+            padding: 9px;
+            text-align: left;
+            margin-bottom: 9px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .result-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-vibrant);
+        }
+        .result-card h2 { font-size: 0.675rem; margin-bottom: 6px; color: var(--dark-blue); text-align: center; }
+        .result-card .dmc-content {
+            font-size: 0.525rem;
+            line-height: 1.6;
+            color: var(--dark-blue);
+        }
+        .result-card .dmc-content strong {
+            color: var(--primary-blue);
+        }
+        .result-card .dmc-content p {
+            margin-bottom: 4px;
+        }
+        .result-actions { display: flex; flex-direction: column; gap: 4.5px; margin-top: 9px; }
+        .result-actions .btn { border: 1px solid rgba(0,0,0,0.1); }
+
+        .topper-note {
+            background: #fef9e7;
+            border-left: 3.75px solid var(--accent-orange);
+            padding: 6px;
+            border-radius: 3px;
+            margin-top: 6px;
+            font-size: 0.525rem;
+            color: #7d6608;
+        }
+
+        .all-mcqs-list { display: flex; flex-direction: column; gap: 11.25px; }
+        .all-mcq-item { padding: 7.5px; border: 1px solid var(--light-blue); border-radius: 6px; background: #f8fafc; position: relative; }
+        .all-mcq-item .question-text { color: var(--dark-blue); font-size: 0.6rem; font-weight: 700; }
+        .all-mcq-options { display: flex; flex-direction: column; gap: 3px; margin-top: 4.5px; }
+        .all-mcq-option { font-size: 0.525rem; padding: 3px 4.5px; border-radius: 3px; border: 1px solid #e5e7eb; }
+        .all-mcq-option.correct { background: #d1fae5; color: var(--accent-green); font-weight: 600; border-color: #a7f3d0; }
+        .all-mcq-option.wrong-answer { background: #fee2e2; color: var(--accent-red); font-weight: 600; border-color: #fecaca; }
+        .all-mcq-reasoning { margin-top: 6px; font-size: 0.525rem; color: #4b5563; padding: 6px; background: #f8fafc; border-radius: 3px; border-left: 2.25px solid var(--primary-blue); }
+        .all-mcq-reasoning strong { color: var(--dark-blue); }
+
+        .pagination-controls {
+            display: flex; justify-content: center; align-items: center; gap: 6px; margin: 9px 0;
+        }
+        .pagination-controls .btn-small { width: auto; padding: 2px 6px; font-size: 0.45rem; }
+        .page-indicator { font-size: 0.5rem; font-weight: 600; color: var(--dark-blue); }
+
+        .error-box { background: #fee2e2; color: var(--accent-red); padding: 3.75px 5.25px; border-radius: 2.25px; margin-top: 4.5px; display: none; font-weight: 600; font-size: 0.525rem; border-left: 2.25px solid var(--accent-red); }
+        .info-box { background: #f0f9ff; border-left: 3px solid var(--primary-blue); padding: 6px; margin-bottom: 6px; font-size: 0.4875rem; border-radius: 3px; }
+
+        @media (max-width: 768px) {
+            .quiz-header { flex-direction: column; gap: 4.5px; align-items: flex-start; }
+            .navigation-buttons { grid-template-columns: 1fr; }
+            .timer-container { position: relative; top: auto; right: auto; margin-top: 3.75px; justify-content: flex-end; width: 100%; }
+            .quiz-title-container { width: 100%; }
+            .result-actions { flex-direction: column; }
+            .promo-banner { padding: 9px; }
+            .promo-banner h2 { font-size: 0.6rem; }
+            .promo-banner p { font-size: 0.4125rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="device-toggle" id="deviceToggle">Switch to Laptop View</button>
+
+    <div class="quiz-notification" id="quiz-notification">
+        <div class="quiz-notification-content">
+            <div class="quiz-notification-title" id="notification-title">Quiz Progress Found</div>
+            <div class="quiz-notification-message" id="notification-message">You have an unfinished quiz. Do you want to continue where you left off?</div>
+            <div class="quiz-notification-actions">
+                <button class="quiz-notification-btn secondary" id="notification-no">Start Fresh</button>
+                <button class="quiz-notification-btn primary" id="notification-yes">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <h1>MedPlex MDCAT Preparation Academy</h1>
+            <p>Computerized Assessment System v14.0</p>
+        </div>
+
+        <!-- SIGNIN PAGE (with Test ID displayed) -->
+        <div id="signin-page" class="page active">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> Unlock Your Potential with MedPlex MDCAT Academy</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+            
+            <!-- Test ID display (dynamic) -->
+            <div class="info-box" style="margin-bottom: 8px;">
+                <i class="fas fa-info-circle"></i> <strong>Current Test ID:</strong> MPX-BIO-01-2026 (Use this ID for reference)
+            </div>
+
+            <h2><i class="fas fa-lock"></i> Access Portal</h2>
+            <p>Choose an option below</p>
+            
+            <div class="main-page-buttons">
+                <button class="btn btn-primary" onclick="showAllMcqsPage()">
+                    <i class="fas fa-list-alt"></i> <span>View All MCQs (Learning Mode)</span>
+                </button>
+                <button class="btn btn-primary" onclick="showRegistrationPage()">
+                    <i class="fas fa-user-plus"></i> <span>Sign Up to Get Quiz Access</span>
+                </button>
+                <!-- WhatsApp button -->
+                <button class="btn btn-whatsapp" onclick="window.open('https://wa.me/923000047325', '_blank')">
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp Contact</span>
+                </button>
+            </div>
+            
+            <!-- Quiz access form (enter generated code) -->
+            <div id="quiz-access-form" class="quiz-access-section">
+                <h3><i class="fas fa-key"></i> Enter MedPlex ID</h3>
+                <div class="password-container input-container">
+                    <input type="password" id="quizAccessCode" class="form-input" placeholder="e.g., MPX-123AB">
+                    <i class="fas fa-eye-slash input-icon" id="toggleQuizAccessCode"></i>
+                </div>
+                <button class="btn btn-primary" onclick="accessQuiz(document.getElementById('quizAccessCode').value)">
+                    <span>Access Quiz</span> <i class="fas fa-arrow-right"></i>
+                </button>
+                <div id="quiz-error-box" class="error-box">
+                    <i class="fas fa-exclamation-circle"></i> Invalid access code.
+                </div>
+            </div>
+        </div>
+
+        <!-- REGISTRATION PAGE (with Gender) -->
+        <div id="registration-page" class="page">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> Unlock Your Potential with MedPlex MDCAT Academy</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+            
+            <h2><i class="fas fa-user-edit"></i> Student Registration</h2>
+            <p>Please provide your details to register</p>
+            
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-user"></i> Student Name</label>
+                <input type="text" id="studentName" class="form-input" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-user-friends"></i> Father Name</label>
+                <input type="text" id="fatherName" class="form-input" placeholder="Enter your father's name">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-venus-mars"></i> Gender</label>
+                <select id="gender" class="form-select">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-phone"></i> Mobile Number (WhatsApp)</label>
+                <input type="tel" id="mobile" class="form-input" placeholder="+92XXXXXXXXXX">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-city"></i> City / District</label>
+                <input type="text" id="city" class="form-input" placeholder="Enter your city/district">
+            </div>
+            <button class="btn btn-primary" onclick="handleRegistration()">
+                <span>Submit to Get Access to Quiz</span> <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-red" style="margin-top: 3.75px;" onclick="showPage('signin-page')">
+                <i class="fas fa-chevron-left"></i> Back to Home
+            </button>
+        </div>
+
+        <!-- QUIZ PAGE -->
+        <div id="quiz-page" class="page">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> MedPlex MDCAT Academy – Computerized Assessment</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+
+            <div class="quiz-header">
+                <div class="quiz-title-container">
+                    <h2 id="quiz-title"></h2>
+                    <div class="quiz-info">
+                        <span><i class="fas fa-book"></i> Subject: <span id="quiz-subject">Biology (MDCAT)</span></span>
+                        <span><i class="fas fa-clock"></i> Total Time: <span id="quiz-duration">40</span> min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timer-container">
+                <div class="timer total-timer" id="timer">40:00</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="quiz-progress"></div>
+            </div>
+
+            <div class="question-nav" id="question-nav"></div>
+            
+            <div class="question-container">
+                <div class="question-text" id="question-text"></div>
+                <div class="options-container" id="options-container"></div>
+                <div class="reasoning" id="reasoning">
+                    <div class="reasoning-title"><i class="fas fa-lightbulb"></i> Explanation:</div>
+                    <div id="reasoning-text"></div>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn btn-back" onclick="navigateQuestion('prev')">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <button class="nav-btn btn-next" onclick="navigateQuestion('next')">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="nav-btn btn-reasoning disabled" id="reasoning-btn" onclick="toggleReasoning()">
+                    <i class="fas fa-lightbulb"></i> Explanation
+                </button>
+                <button class="nav-btn btn-submit" onclick="submitTest()">
+                    Submit Test <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULTS PAGE with DMC and View Mistakes button -->
+        <div id="results-page" class="page">
+            <div class="results-header-buttons">
+                <a id="website-link" href="#" target="_blank" class="btn btn-primary"><i class="fas fa-globe"></i> Website</a>
+                <a id="whatsapp-contact-link" href="#" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Support</a>
+            </div>
+            
+            <div class="submission-message" id="submission-message">
+                <div class="submission-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Test Submitted Successfully!</h2>
+                <p>Your results have been submitted to our Computerized Assessment System v14.0.</p>
+                <p><strong>Important:</strong> Electronic Detailed Marks Certificate (DMC) has been sent to your registered email.</p>
+                <p><strong>Please Check:</strong> Your Inbox, Spam Folder, and Junk Folder in email</p>
+                <p><strong>Alternative:</strong> Also check WhatsApp messages for results</p>
+                <p>Thank you for taking the test!</p>
+            </div>
+            
+            <!-- DMC Card -->
+            <div class="result-card" id="dmc-card">
+                <h2><i class="fas fa-certificate"></i> Detailed Marks Certificate (DMC)</h2>
+                <div class="dmc-content" id="dmc-content">
+                    <!-- DMC text will be injected here -->
+                </div>
+                <div class="topper-note">
+                    <i class="fas fa-trophy"></i> <strong>Toppers will be announced within 8 hours after the test.</strong> Stay tuned!
+                </div>
+            </div>
+            
+            <div class="result-actions" id="result-actions">
+                <button class="btn btn-primary" onclick="showMistakes()">
+                    <i class="fas fa-eye"></i> View Mistakes
+                </button>
+                <button class="btn btn-primary" onclick="restartTest()" id="retake-full-btn">
+                    <i class="fas fa-redo"></i> Start New Assessment
+                </button>
+                <button class="btn btn-primary" onclick="viewHistoryPlaceholder()">
+                    <i class="fas fa-history"></i> View Test History
+                </button>
+                <button class="btn btn-primary" onclick="showPage('signin-page')">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+        </div>
+
+        <!-- ALL MCQS PAGE (reused for mistakes view) -->
+        <div id="all-mcqs-page" class="page">
+            <h2 id="mcqs-page-title"><i class="fas fa-list-alt"></i> All MCQs and Solutions</h2>
+            <div id="all-mcqs-list" class="all-mcqs-list"></div>
+            <div class="pagination-controls" id="mcq-pagination">
+                <button class="btn btn-primary btn-small" id="prevPageBtn" onclick="changeMcqPage(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span class="page-indicator" id="pageIndicator">Page 1 / 1</span>
+                <button class="btn btn-primary btn-small" id="nextPageBtn" onclick="changeMcqPage(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 9px;">
+                <button class="btn btn-primary" onclick="showAllMcqsPage()" id="showAllMcqsBtn">
+                    <i class="fas fa-list"></i> Show All MCQs
+                </button>
+                <button class="btn btn-primary" onclick="showPage('signin-page')">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// ========== JAVASCRIPT (NEW TEMPLATE – NO SHUFFLE, MISTAKES VIEW) ==========
+const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWsyYrTpQ-sshz2JjvpzTs_5mC_vKDCojPrFLMRLismevNan1vZvjyGg6BgDviWv4/exec';
+
+// ================== MCQ DATA (from generator) ==================
+const RAW_MCQS = `What is the fundamental chemical consequence of the ester linkage formation between glycerol and fatty acids in acylglycerol synthesis?
+A) Release of water molecules from carboxyl and hydroxyl groups
+B) Formation of carbon-carbon double bonds
+C) Creation of nitrogen-containing functional groups
+D) Production of hydrogen gas as a byproduct
+Correct: A
+Reasoning: Ester linkage formation in acylglycerols occurs through condensation reactions where the carboxyl group (-COOH) of a fatty acid reacts with a hydroxyl group (-OH) of glycerol. This reaction releases a water molecule for each ester bond formed, creating an oxygen bridge between the glycerol and fatty acid.
+Incorrect1: Carbon-carbon double bonds are already present in unsaturated fatty acids and aren't formed during esterification
+Incorrect2: Acylglycerols contain only carbon, hydrogen, and oxygen; no nitrogen is involved
+Incorrect3: Hydrogen gas production would require reduction reactions, not esterification
+---
+How does the presence of both polar and non-polar regions in a phospholipid enable it to form the structural basis of cell membranes?
+A) Polar heads dissolve in cytoplasm while non-polar tails dissolve in extracellular fluid
+B) The dual nature allows simultaneous interaction with aqueous environments and sequestration of hydrophobic tails
+C) Polar heads form covalent peptide bonds with membrane proteins
+D) Non-polar tails create ionic channels through the membrane
+Correct: B
+Reasoning: Phospholipids are amphipathic molecules with hydrophilic phosphate-containing heads and hydrophobic fatty acid tails. In aqueous environments, the hydrophilic heads face water while hydrophobic tails associate internally, creating the bilayer structure where the interior excludes water and the exterior interacts with aqueous cellular environments.
+Incorrect1: Non-polar tails cannot dissolve in water; they're hydrophobic and excluded
+Incorrect2: No covalent bonds form between phospholipids and proteins in the membrane
+Incorrect3: Ionic channels are formed by proteins, not by phospholipid tails
+---
+Why can maltose and lactose act as reducing sugars while sucrose cannot, despite all being disaccharides?
+A) Sucrose has both anomeric carbons involved in glycosidic bond formation
+B) Maltose contains three glucose units while sucrose contains only two
+C) Lactose has a ketone group while sucrose has an aldehyde group
+D) Sucrose forms a ring structure that prevents open-chain formation
+Correct: A
+Reasoning: Reducing sugars require a free anomeric carbon that can open to the aldehyde or ketone form. In maltose (glucose α-1,4 glucose) and lactose (galactose β-1,4 glucose), one anomeric carbon remains free. In sucrose (glucose α-1,2 fructose), both anomeric carbons (C1 of glucose and C2 of fructose) participate in the glycosidic bond, leaving neither free for ring-opening and oxidation.
+Incorrect1: Maltose contains exactly two glucose units, not three
+Incorrect2: Lactose contains an aldehyde after ring-opening; sucrose's fructose has a ketone but that's not why it's non-reducing
+Incorrect3: All disaccharides form rings; the issue is which anomeric carbons are bonded
+---
+What structural feature of chitin makes it suitable for forming tough exoskeletons in arthropods while remaining flexible enough for movement?
+A) Alternating β-1,4 and α-1,4 linkages create rigid and flexible regions
+B) Acetyl amino groups on each monomer allow additional hydrogen bonding between parallel chains
+C) Chitin chains are covalently cross-linked by disulfide bridges
+D) Calcium carbonate crystals embedded between chitin layers provide strength
+Correct: B
+Reasoning: Chitin consists of N-acetylglucosamine units linked by β-1,4 glycosidic bonds. The acetylamino groups (-NHCOCH₃) at the C2 position form extensive hydrogen bonds between adjacent parallel chains, creating microfibrils with high tensile strength. This hydrogen bonding network provides rigidity while allowing enough flexibility for jointed appendages to move.
+Incorrect1: Chitin has exclusively β-1,4 linkages throughout; no alternating pattern exists
+Incorrect2: Chitin contains no sulfur and forms no disulfide bridges
+Incorrect3: Calcium carbonate reinforcement occurs in some arthropod cuticles but isn't part of chitin's molecular structure
+---
+How does the heat of vaporization of water directly contribute to temperature regulation in mammals through evaporative cooling?
+A) Water releases heat when it condenses on the skin surface
+B) Breaking hydrogen bonds during vaporization absorbs large amounts of heat from the body
+C) Sweat conducts heat away from blood vessels through metal ions
+D) Evaporation creates a vacuum that pulls heat from deeper tissues
+Correct: B
+Reasoning: Water's high heat of vaporization (574 cal/g) results from the energy required to overcome extensive hydrogen bonding between molecules. When sweat evaporates from skin, this energy is absorbed as heat from the body surface, providing efficient cooling. Each gram of water vaporized removes significant thermal energy without requiring large water loss.
+Incorrect1: Condensation releases heat; evaporation absorbs heat
+Incorrect2: Sweat's primary cooling mechanism is phase change, not conduction by ions
+Incorrect3: Evaporation doesn't create a vacuum; it's an endothermic phase change
+---
+What experimental observation would directly demonstrate that DNA strands are antiparallel rather than parallel?
+A) Equal amounts of adenine and thymine in all DNA samples
+B) X-ray diffraction showing 2 nm consistent diameter
+C) Showing that one strand's 5' end aligns with the other strand's 3' end in the crystal structure
+D) Ability of DNA to denature and renature reversibly
+Correct: C
+Reasoning: Direct structural determination through techniques like X-ray crystallography of oligonucleotides reveals that at each end of the double helix, one strand terminates with a 5'-phosphate while the complementary strand terminates with a 3'-hydroxyl. This opposite orientation is essential for the hydrogen bonding geometry between complementary bases and for the major/minor groove patterns.
+Incorrect1: Chargaff's rules show base pairing but don't demonstrate strand directionality
+Incorrect2: Constant diameter results from purine-pyrimidine pairing, not antiparallel orientation
+Incorrect3: Denaturation and renaturation occur regardless of strand orientation
+---
+Why does hemoglobin's oxygen-binding curve have a sigmoidal shape while myoglobin's curve is hyperbolic?
+A) Hemoglobin contains four heme groups while myoglobin contains only one
+B) Hemoglobin subunits undergo conformational changes upon oxygen binding that affect remaining subunits
+C) Myoglobin denatures at low oxygen tensions while hemoglobin remains stable
+D) Hemoglobin binds oxygen covalently while myoglobin uses ionic interactions
+Correct: B
+Reasoning: Hemoglobin's tetrameric structure enables cooperative oxygen binding: when oxygen binds to one subunit's heme, it pulls the iron into the porphyrin plane, causing conformational changes transmitted across subunit interfaces. This increases oxygen affinity of remaining subunits, producing the sigmoidal curve essential for oxygen unloading in tissues. Myoglobin's single subunit cannot exhibit cooperativity.
+Incorrect1: Number of hemes allows but doesn't automatically create cooperativity
+Incorrect2: Both proteins bind oxygen reversibly through coordination bonds, not covalent or primarily ionic
+Incorrect3: Myoglobin has higher oxygen affinity at all partial pressures; denaturation isn't involved
+---
+What is the critical distinction between the glycosidic bond in cellulose versus that in starch that explains their different digestibility by humans?
+A) Cellulose has β-1,4 linkages while starch has α-1,4 and α-1,6 linkages
+B) Cellulose chains are longer than starch chains
+C) Starch contains branching while cellulose is linear
+D) Cellulose has additional phosphate groups that block enzyme access
+Correct: A
+Reasoning: The stereochemistry of the glycosidic bond fundamentally determines enzyme specificity. Human amylase has an active site complementary to the geometry of α-1,4 linkages found in starch, allowing hydrolysis. Cellulose's β-1,4 linkages present a different spatial arrangement of the glucose units that cannot fit into amylase's active site, making cellulose indigestible despite both being glucose polymers.
+Incorrect1: Chain length differences aren't the primary reason for indigestibility
+Incorrect2: Branching affects digestion rate but β-linkage prevents any digestion by human enzymes
+Incorrect3: Cellulose contains no phosphate groups; it's pure β-1,4 glucose polymer
+---
+How does the tertiary structure of a globular protein differ fundamentally from its secondary structure in terms of the interactions involved?
+A) Tertiary structure involves interactions between side chains of amino acids far apart in the sequence
+B) Secondary structure involves covalent disulfide bonds while tertiary uses hydrogen bonds
+C) Tertiary structure is maintained only by peptide bonds while secondary uses hydrophobic interactions
+D) Secondary structure determines biological activity while tertiary provides only structural support
+Correct: A
+Reasoning: Secondary structure (α-helices, β-sheets) results from regular hydrogen bonding between backbone atoms of nearby amino acids. Tertiary structure involves interactions between amino acid side chains that may be distant in the primary sequence, including hydrophobic effects, hydrogen bonds, ionic interactions, and disulfide bridges, creating the unique three-dimensional fold.
+Incorrect1: Disulfide bonds are tertiary, not secondary; secondary uses backbone H-bonds
+Incorrect2: Peptide bonds form primary structure; all higher structures involve non-covalent interactions plus possible disulfides
+Incorrect3: Both secondary and tertiary structures are essential for biological activity
+---
+Why do phospholipids with unsaturated fatty acid tails increase membrane fluidity at low temperatures compared to saturated tails?
+A) Unsaturated tails are longer, creating more space between molecules
+B) Cis double bonds introduce kinks that prevent tight packing of hydrocarbon chains
+C) Unsaturated tails have higher energy content that melts at lower temperatures
+D) Double bonds create ionic repulsion between adjacent phospholipids
+Correct: B
+Reasoning: Unsaturated fatty acids contain cis double bonds that introduce rigid kinks in the hydrocarbon chain. These kinks prevent the tails from packing closely together, disrupting the regular van der Waals interactions that would otherwise cause the membrane to enter a rigid gel phase at low temperatures. The resulting disorder maintains membrane fluidity in cold conditions.
+Incorrect1: Unsaturated tails aren't systematically longer; chain length is independent of saturation
+Incorrect2: Energy content differences are negligible; fluidity is about packing geometry
+Incorrect3: Double bonds are non-polar; no ionic repulsion occurs
+---
+What is the functional significance of the fact that DNA contains thymine while RNA contains uracil?
+A) Thymine forms stronger hydrogen bonds with adenine than uracil does
+B) The 5-methyl group on thymine allows repair enzymes to distinguish deaminated cytosine from thymine
+C) Uracil cannot pair with adenine in double-stranded structures
+D) Thymine prevents formation of secondary structures that could interfere with replication
+Correct: B
+Reasoning: Cytosine can spontaneously deaminate to form uracil. If DNA contained uracil normally, this deamination would create uracil that the cell couldn't distinguish from normal bases, leading to mutations after replication. DNA's use of thymine (5-methyluracil) means any uracil appearing in DNA is recognized as damaged cytosine and removed by repair enzymes, preserving genetic information.
+Incorrect1: Thymine and uracil form similarly strong hydrogen bonds with adenine
+Incorrect2: Uracil pairs with adenine normally in RNA; the issue is distinguishing damage
+Incorrect3: Thymine doesn't prevent secondary structures; both can form them
+---
+How does the presence of the 5' cap and poly-A tail on eukaryotic mRNA functionally distinguish it from prokaryotic mRNA?
+A) They provide binding sites for ribosomes during translation initiation
+B) They protect the mRNA from exonucleases and facilitate nuclear export
+C) They contain the genetic code for protein synthesis
+D) They serve as templates for DNA synthesis during reverse transcription
+Correct: B
+Reasoning: The 5' cap (7-methylguanosine) and 3' poly-A tail are eukaryotic mRNA modifications that protect both ends from rapid degradation by exonucleases. The cap also facilitates nuclear export and ribosome binding, while the poly-A tail enhances translation efficiency and stability. Prokaryotic mRNAs lack these modifications, making them less stable with shorter half-lives.
+Incorrect1: Ribosome binding in prokaryotes uses the Shine-Dalgarno sequence, not a cap
+Incorrect2: The genetic code is in the coding sequence between the modifications
+Incorrect3: Reverse transcription is viral, not a normal eukaryotic function
+---
+What property of water's cohesion enables the transport of water in tall trees against gravity?
+A) Water molecules form temporary covalent bonds that create continuous columns
+B) Cohesion from hydrogen bonds allows water columns to resist tension without breaking
+C) Adhesion to xylem walls pulls water upward through capillary action alone
+D) Surface tension creates a film that supports the water column
+Correct: B
+Reasoning: Water's extensive hydrogen bonding creates strong cohesive forces between molecules, allowing water to form continuous columns that can withstand tremendous tension (negative pressure) during transpiration without breaking. This cohesion, combined with adhesion to xylem walls, enables water to be pulled upward from roots to leaves in tall trees, defying gravity.
+Incorrect1: Hydrogen bonds are intermolecular, not covalent
+Incorrect2: Capillary action contributes but can't explain transport in tall trees without cohesion under tension
+Incorrect3: Surface tension is related but cohesion under tension is the key property for transport
+---
+Why do triacylglycerols store more energy per gram than carbohydrates despite carbohydrates having more oxygen?
+A) The carbon atoms in fatty acids are more reduced (more C-H bonds) than in carbohydrates
+B) Triacylglycerols have higher molecular weight than carbohydrates
+C) Carbohydrates contain water of hydration that adds weight without energy
+D) The glycerol backbone provides additional energy not present in sugars
+Correct: A
+Reasoning: Energy yield during oxidation depends on the reduction state of carbon. Fatty acids in triacylglycerols have long hydrocarbon chains with many C-H and C-C bonds and few oxygens. Carbohydrates have many oxygens already partially oxidizing the carbons. Complete oxidation of fatty acids therefore yields more ATP per gram (~9 kcal/g) compared to carbohydrates (~4 kcal/g).
+Incorrect1: Molecular weight doesn't determine energy density; chemical composition does
+Incorrect2: Carbohydrates don't contain bound water; they're anhydrous
+Incorrect3: Glycerol contribution is small; fatty acids provide most energy
+---
+How does the quaternary structure of collagen differ fundamentally from that of hemoglobin, and what functional consequence does this have?
+A) Collagen's triple helix uses covalent cross-links for tensile strength while hemoglobin uses non-covalent subunit interactions
+B) Collagen has four subunits while hemoglobin has three
+C) Collagen subunits are identical while hemoglobin subunits are all different
+D) Collagen uses hydrogen bonds exclusively while hemoglobin uses disulfide bonds
+Correct: A
+Reasoning: Collagen consists of three polypeptide chains wound into a tight triple helix, stabilized by extensive interchain hydrogen bonds and reinforced by covalent cross-links (aldol cross-links) between lysine and hydroxylysine residues. This provides enormous tensile strength for structural roles. Hemoglobin's four subunits associate through non-covalent interactions, allowing the conformational flexibility needed for cooperative oxygen binding.
+Incorrect1: Collagen has three subunits; hemoglobin has four (two α, two β)
+Incorrect2: Hemoglobin has two types; collagen may have identical or different chains
+Incorrect3: Hemoglobin uses no disulfide bonds; collagen's strength comes from both H-bonds and covalent cross-links
+---
+What is the thermodynamic driving force for protein folding beyond simple hydrophobic burial?
+A) Formation of maximum number of weak interactions (hydrogen bonds, van der Waals) with optimal geometry
+B) Complete dehydration of the protein interior
+C) Formation of covalent peptide bonds between side chains
+D) Maximum exposure of charged groups to the protein surface
+Correct: A
+Reasoning: While hydrophobic exclusion drives chain collapse, the native structure is stabilized by the collective formation of thousands of weak interactions—hydrogen bonds between backbone and side chains, van der Waals contacts from close packing, and ionic interactions—all with precise geometry. The native state represents the structure maximizing these stabilizing interactions while maintaining hydrophobic burial.
+Incorrect1: Complete dehydration isn't possible; structured water remains
+Incorrect2: No new covalent bonds form during folding (except disulfides in some proteins)
+Incorrect3: Charged groups must be balanced; maximum exposure would be destabilizing
+---
+How does the unique structure of transfer RNA's acceptor stem and anticodon loop enable it to function as an adaptor molecule?
+A) Both ends contain identical nucleotide sequences for redundancy
+B) The 3' CCA end carries amino acid while the anticodon loop base-pairs with mRNA codons
+C) The D-loop binds to ribosomes while the T-loop binds to aminoacyl-tRNA synthetase
+D) The entire tRNA molecule base-pairs with mRNA along its length
+Correct: B
+Reasoning: tRNA's L-shaped three-dimensional structure positions two functionally critical regions at opposite ends. The acceptor stem terminates in the conserved 3'-CCA sequence where the amino acid is esterified. The anticodon loop, at the other end, contains the triplet that base-pairs with mRNA codons. This spatial separation allows the tRNA to simultaneously bring a specific amino acid into position while reading the genetic code.
+Incorrect1: The ends have different sequences and functions
+Incorrect2: The loops have specific functions but the key is acceptor stem and anticodon
+Incorrect3: tRNA doesn't base-pair extensively with mRNA beyond the anticodon
+---
+Why does ice have a lower density than liquid water, allowing it to float and insulate aquatic environments?
+A) Water molecules move faster in ice, creating more space between them
+B) Hydrogen bonds in ice form a rigid crystalline lattice with fixed hexagonal spaces
+C) Ice contains air bubbles trapped during freezing that decrease density
+D) Water molecules in ice lose their polarity, reducing intermolecular attraction
+Correct: B
+Reasoning: When water freezes, each molecule forms four stable hydrogen bonds in a tetrahedral lattice structure, creating organized hexagonal spaces between molecules. This crystalline arrangement actually increases the volume compared to liquid water, making ice less dense (0.917 g/cm³) than liquid water (1.00 g/cm³), allowing it to float and insulate the water below.
+Incorrect1: Molecules in ice vibrate in fixed positions and move slower than in liquid water
+Incorrect2: Pure ice contains no trapped air; the density difference is due to lattice structure
+Incorrect3: Water molecules retain their polarity in ice; hydrogen bonding creates the lattice
+---
+What is the chemical basis for the observation that starch-iodine complex appears blue-black while glycogen-iodine complex appears reddish-brown?
+A) Iodine reacts differently with the reducing ends of each polymer
+B) The longer, less branched helices of amylose accommodate more iodine molecules in linear arrangement
+C) Glycogen contains protein impurities that alter iodine color
+D) Starch has both amylose and amylopectin while glycogen is pure amylopectin
+Correct: B
+Reasoning: The color results from iodine molecules (I₃⁻) packing inside the helical coils of amylose (the linear component of starch). Amylose forms long, relatively unbranched helices that can accommodate extended linear arrays of iodine, producing the blue-black color. Glycogen and amylopectin have highly branched structures with shorter helical segments, allowing only smaller, disordered iodine clusters that appear reddish-brown.
+Incorrect1: Reducing ends are rare and don't significantly affect iodine binding
+Incorrect2: Glycogen doesn't contain significant protein; color difference is structural
+Incorrect3: Starch contains both components, but amylose creates the characteristic blue
+---
+How does the presence of both aminoacyl-tRNA synthetase enzymes and the degeneracy of the genetic code ensure accurate protein synthesis?
+A) Synthetases charge tRNAs with correct amino acids while degeneracy allows multiple codons for one amino acid without affecting accuracy
+B) Degeneracy ensures each amino acid has only one tRNA
+C) Synthetases proofread mRNA sequences before translation
+D) Degeneracy prevents mutations by making all codons identical
+Correct: A
+Reasoning: Accuracy requires two distinct mechanisms: First, each aminoacyl-tRNA synthetase must attach the correct amino acid to its corresponding tRNA(s) (the "second genetic code"). Second, degeneracy means most amino acids are specified by multiple codons, recognized by different tRNAs. This redundancy doesn't compromise accuracy because each codon-tRNA interaction maintains fidelity, while allowing evolutionary flexibility.
+Incorrect1: Each amino acid typically has multiple tRNAs due to degeneracy
+Incorrect2: Synthetases act on tRNAs, not mRNA
+Incorrect3: Degeneracy doesn't make codons identical; it provides multiple codons for same amino acid
+---
+What structural feature of phospholipids determines whether they form bilayers versus micelles in aqueous solution?
+A) The length of the fatty acid tails determines aggregation preference
+B) The ratio of head group cross-sectional area to tail cross-sectional area determines packing geometry
+C) The degree of saturation determines whether bilayers or micelles form
+D) The presence of phosphate groups forces micelle formation exclusively
+Correct: B
+Reasoning: Molecular geometry determines aggregation shape. Phospholipids with two bulky hydrophobic tails and a relatively smaller head group have a cylindrical shape (head area ≈ tail area), packing efficiently into bilayers. Detergents with single tails have a conical shape (head area > tail area), favoring curved micelles where tails are sequestered in the interior and heads face water.
+Incorrect1: Tail length affects fluidity but not the fundamental bilayer vs. micelle decision
+Incorrect2: Saturation affects fluidity and packing density but not the basic aggregation form
+Incorrect3: Phosphate groups are present in both phospholipids and some micelle-forming detergents
+---
+How does the ionization of water (H₂O ⇌ H⁺ + OH⁻) contribute to the buffering capacity of biological fluids?
+A) It provides a constant source of H⁺ and OH⁻ that can neutralize added acids or bases
+B) It generates oxygen atoms that combine with excess hydrogen ions
+C) It creates covalent bonds between water molecules that trap excess protons
+D) It produces energy that drives proton pumps in cell membranes
+Correct: A
+Reasoning: The reversible ionization of water establishes an equilibrium between H₂O, H⁺, and OH⁻. When acid (H⁺) is added, the equilibrium shifts left as H⁺ combines with OH⁻ to form water. When base (OH⁻) is added, it combines with H⁺ to form water. This equilibrium, though slight, provides the foundation upon which biological buffer systems operate to resist pH changes.
+Incorrect1: Oxygen atoms are already in water; no additional oxygen is generated
+Incorrect2: No covalent bonds form between water molecules beyond normal hydrogen bonding
+Incorrect3: Ionization doesn't produce energy; proton pumps use ATP
+---
+Why can cellulose be broken down by cellulase-producing bacteria in herbivore digestive systems but not by human enzymes?
+A) Cellulase has a different active site geometry that accommodates β-1,4 linkages
+B) Bacterial enzymes are more powerful and can break any glycosidic bond
+C) Human stomach acid denatures cellulase before it can act
+D) Cellulose must be physically ground before any enzyme can access it
+Correct: A
+Reasoning: Enzyme specificity is determined by active site complementarity to substrate structure. Cellulase enzymes have active sites shaped to recognize and hydrolyze the β-1,4 glycosidic linkage of cellulose, with appropriate catalytic residues positioned for this specific bond geometry. Human digestive enzymes evolved to recognize α-linkages in starch and glycogen, not the β-configuration.
+Incorrect1: Enzymes are highly specific; no enzyme can break any glycosidic bond
+Incorrect2: Cellulase isn't produced by humans; stomach acid doesn't denature enzymes we don't make
+Incorrect3: Physical grinding aids access but doesn't enable chemical bond cleavage without appropriate enzymes
+---
+What is the functional significance of the fact that hemoglobin's four subunits are arranged as two identical α chains and two identical β chains?
+A) This arrangement allows symmetrical oxygen binding with two types of subunits
+B) Identical chains would cause the protein to aggregate uncontrollably
+C) Different chains are required for heme binding while identical chains cannot bind heme
+D) The α chains store iron while β chains bind oxygen
+Correct: A
+Reasoning: Hemoglobin's α₂β₂ tetrameric structure provides symmetry while allowing two types of subunits with slightly different amino acid sequences. This enables cooperative oxygen binding through specific contact interfaces between α and β subunits. The conformational changes upon oxygen binding are transmitted across these interfaces, creating the allosteric properties essential for function.
+Incorrect1: Many proteins with identical subunits exist and don't aggregate uncontrollably
+Incorrect2: Both α and β chains bind heme; heme binding doesn't require chain differences
+Incorrect3: Both chain types bind heme and oxygen; no such functional division exists
+---
+How does the 5' → 3' directionality of DNA synthesis create the requirement for Okazaki fragments during replication?
+A) DNA polymerase can only add nucleotides to a 3'-OH, but the two template strands are antiparallel
+B) The leading strand template is degraded during replication, requiring replacement synthesis
+C) Helicase unwinds only one strand at a time, forcing discontinuous synthesis on the other
+D) Primase cannot synthesize RNA primers on the lagging strand template
+Correct: A
+Reasoning: DNA polymerases catalyze addition only to the 3'-OH of the growing strand, forcing synthesis in the 5'→3' direction. Since the two template strands are antiparallel, the polymerase moving toward the replication fork on one template (leading strand) can synthesize continuously. On the other template, synthesis must occur away from the fork in short Okazaki fragments that are later joined.
+Incorrect1: Both strands remain intact; neither is degraded during normal replication
+Incorrect2: Helicase unwinds both strands simultaneously
+Incorrect3: Primase synthesizes primers on both strands; lagging strand requires multiple primers
+---
+What property of water's high specific heat capacity makes it an effective temperature buffer for aquatic organisms?
+A) Water releases heat quickly when environmental temperature drops
+B) Water absorbs large amounts of heat with minimal temperature increase
+C) Water expands when heated, creating circulation that distributes heat
+D) Water forms an insulating layer on the surface when temperatures change
+Correct: B
+Reasoning: Water's high specific heat capacity (4.18 J/g°C) means it can absorb or release substantial thermal energy with only small changes in its own temperature. This property allows large bodies of water to moderate temperature extremes, maintaining relatively stable environments for aquatic organisms despite external temperature fluctuations.
+Incorrect1: Water releases heat slowly, not quickly, due to high specific heat
+Incorrect2: Expansion and circulation are related to density changes, not specific heat
+Incorrect3: Surface ice forms an insulating layer, but this relates to density anomaly, not specific heat
+---
+Why do waxes function effectively as waterproof coatings on plant leaves and animal fur?
+A) Waxes contain hydrophilic groups that repel water through charge interactions
+B) Long-chain alcohols and fatty acids create extremely hydrophobic surfaces with no polar groups
+C) Waxes form covalent bonds with water molecules, preventing penetration
+D) Waxes absorb water and swell, creating a physical barrier
+Correct: B
+Reasoning: Waxes are esters of long-chain fatty acids and long-chain alcohols, resulting in molecules with very long hydrocarbon chains and minimal polar groups. These extended non-polar regions are extremely hydrophobic, meaning water molecules cannot form favorable interactions with the surface. Water beads up and runs off rather than wetting or penetrating the waxy coating.
+Incorrect1: Waxes have minimal hydrophilic groups; they're predominantly hydrophobic
+Incorrect2: Waxes don't form covalent bonds with water; they're chemically inert
+Incorrect3: Waxes repel water rather than absorbing it
+---
+How does the tertiary structure of an enzyme create an active site with specific catalytic properties?
+A) Distant amino acids in the primary sequence fold together to position catalytic side chains
+B) The active site is formed by a continuous segment of the polypeptide chain
+C) Ribosomes assemble the active site during translation before folding occurs
+D) The active site consists entirely of backbone atoms rather than side chains
+Correct: A
+Reasoning: Enzyme active sites are formed through tertiary folding that brings together amino acid residues from different regions of the primary sequence. These residues may be far apart linearly but become precisely positioned in three-dimensional space to create the catalytic geometry. Their side chains provide specific chemical groups for substrate binding and catalysis.
+Incorrect1: Active sites typically involve residues from multiple non-contiguous regions
+Incorrect2: Active sites form during folding after translation, not during ribosome assembly
+Incorrect3: Backbone atoms contribute but catalytic activity primarily involves precisely positioned side chains
+---
+What is the structural consequence of proline's unique cyclic side chain on protein secondary structure?
+A) Proline promotes alpha helix formation by restricting bond angles
+B) Proline introduces kinks or breaks in alpha helices because its nitrogen lacks hydrogen for backbone hydrogen bonding
+C) Proline enhances beta sheet formation through extended conformations
+D) Proline has no effect on secondary structure elements
+Correct: B
+Reasoning: Proline's side chain forms a ring that connects back to the backbone nitrogen, creating a rigid structure. This cyclic structure fixes the φ (phi) angle and, critically, leaves the nitrogen without a hydrogen atom for the normal backbone N-H···O=C hydrogen bond that stabilizes alpha helices. Consequently, proline acts as a helix breaker, introducing kinks or terminating helices.
+Incorrect1: Proline disrupts, not promotes, alpha helices
+Incorrect2: Proline doesn't specifically promote beta sheets; it's a helix breaker
+Incorrect3: Proline significantly affects secondary structure due to its unique structure
+---
+How does the presence of both α-1,4 and α-1,6 glycosidic linkages in glycogen create functional advantage over purely linear glucose polymers?
+A) The α-1,6 linkages make glycogen resistant to enzymatic breakdown
+B) Branching creates multiple non-reducing ends for simultaneous glucose release
+C) Branched structure allows glycogen to dissolve more readily in water
+D) α-1,6 linkages store more energy per bond than α-1,4 linkages
+Correct: B
+Reasoning: Glycogen's α-1,6 branching points every 8-12 residues create numerous terminal glucose units with free 4'-OH groups (non-reducing ends). Glycogen phosphorylase acts only at these non-reducing ends, releasing glucose-1-phosphate. The highly branched structure provides many sites for simultaneous enzymatic attack, enabling rapid glucose mobilization during sudden energy demands.
+Incorrect1: α-1,6 linkages are actually cleaved by debranching enzyme; they don't confer resistance
+Incorrect2: Solubility differences aren't the primary functional advantage
+Incorrect3: All glycosidic bonds store similar chemical energy
+---
+What critical role do trace elements like iron, zinc, and copper serve in biological systems despite their minute quantities?
+A) They provide structural support to cell walls
+B) They act as cofactors in enzyme active sites, enabling catalysis
+C) They form the backbone of carbohydrate polymers
+D) They maintain osmotic balance across membranes
+Correct: B
+Reasoning: Trace elements are essential because they function as cofactors—non-protein components required for enzyme activity. Iron in heme enables oxygen binding and electron transfer, zinc in carbonic anhydrase catalyzes CO₂ hydration, and copper in cytochrome oxidase facilitates electron transport. Their scarcity belies their critical catalytic roles that major elements cannot perform.
+Incorrect1: Structural support comes from macromolecules, not trace elements
+Incorrect2: Carbohydrates contain C,H,O only; trace elements aren't in backbones
+Incorrect3: Osmotic balance is maintained by electrolytes (Na⁺, K⁺, Cl⁻), not trace elements
+---
+How does the fact that DNA uses deoxyribose while RNA uses ribose contribute to the greater chemical stability of DNA?
+A) Deoxyribose forms stronger glycosidic bonds with nitrogenous bases
+B) The absence of the 2'-OH group prevents intramolecular nucleophilic attacks on the phosphodiester bond
+C) Deoxyribose has a different ring structure that resists hydrolysis
+D) The 2'-H in DNA creates additional hydrogen bonding within the helix
+Correct: B
+Reasoning: The 2'-OH group in ribose makes RNA chemically reactive because it can act as a nucleophile, attacking the adjacent phosphodiester bond and catalyzing strand cleavage, especially under alkaline conditions. DNA's 2'-H cannot participate in such intramolecular attacks, making the DNA backbone significantly more stable for long-term genetic storage.
+Incorrect1: Glycosidic bond strength is similar between DNA and RNA
+Incorrect2: Both sugars have similar ring structures (furanose)
+Incorrect3: The 2'-H doesn't participate in hydrogen bonding within the helix.
+---
+Why does ice float on liquid water, creating an insulating layer essential for aquatic life in frozen environments?
+A) Ice has a higher specific heat capacity than liquid water
+B) Hydrogen bonds in ice form a rigid lattice that increases volume and decreases density
+C) Water molecules in ice move faster than in liquid water
+D) Ice is more polar than liquid water, making it less dense
+Correct: B
+Reasoning: When water freezes, each molecule forms four stable hydrogen bonds in a tetrahedral lattice structure, creating organized hexagonal spaces between molecules. This crystalline arrangement actually increases the volume compared to liquid water, making ice less dense (0.917 g/cm³) than liquid water (1.00 g/cm³), allowing it to float and insulate the water below.
+Incorrect1: Specific heat capacity relates to heat absorption, not density differences between phases
+Incorrect2: Molecules in ice vibrate in fixed positions and move slower than in liquid water
+Incorrect3: Polarity differences between ice and liquid water are negligible; the key is lattice structure
+---
+How would the absence of the 2'-hydroxyl group in deoxyribose fundamentally affect the stability and function of DNA compared to RNA?
+A) It makes DNA more susceptible to alkaline hydrolysis
+B) It eliminates the possibility of forming phosphodiester bonds
+C) It removes a reactive group that could catalyze strand cleavage
+D) It prevents DNA from forming any secondary structure
+Correct: C
+Reasoning: The 2'-OH group in ribose makes RNA chemically reactive because it can act as a nucleophile, attacking the adjacent phosphodiester bond and catalyzing strand cleavage, especially under alkaline conditions. DNA's 2'-H cannot participate in such intramolecular attacks, making the DNA backbone significantly more stable for long-term genetic storage.
+Incorrect1: DNA is actually more resistant to hydrolysis than RNA
+Incorrect2: Phosphodiester bonds form between 3'-OH and 5'-phosphate, independent of 2' position
+Incorrect3: DNA forms double helices and other secondary structures despite lacking 2'-OH
+---
+What critical distinction explains why glycogen, despite being highly branched like amylopectin, functions more effectively as animal energy reserve?
+A) Glycogen has exclusively α-1,4 glycosidic linkages for linear structure
+B) Glycogen molecules are larger and more extensively branched with more terminal glucose units
+C) Glycogen is insoluble in water while amylopectin is soluble
+D) Glycogen contains β-1,4 linkages that resist rapid breakdown
+Correct: B
+Reasoning: Glycogen is essentially a more highly branched and larger version of amylopectin, with branch points occurring every 8-12 glucose residues (compared to every 24-30 in amylopectin). This extensive branching creates numerous non-reducing ends where glycogen phosphorylase can simultaneously cleave glucose units, enabling rapid mobilization of glucose during sudden energy demands in animals.
+Incorrect1: Both contain α-1,4 and α-1,6 linkages
+Incorrect2: Both are insoluble; solubility isn't the key functional difference
+Incorrect3: Glycogen uses α linkages; β linkages would prevent rapid breakdown
+---
+Why would a membrane composed entirely of phospholipids with saturated 18-carbon fatty acid tails become rigid and non-functional at low temperatures?
+A) Saturated tails have kinks that prevent tight packing at any temperature
+B) The straight tails pack tightly through van der Waals interactions, forming a crystalline gel
+C) Saturated tails are shorter and cannot span the membrane bilayer
+D) The polar heads lose their charge at low temperatures
+Correct: B
+Reasoning: Saturated fatty acid tails have no double bonds, allowing them to remain straight and pack closely together through maximal van der Waals interactions. At low temperatures, this tight packing transitions the membrane from a fluid state to a rigid, gel-like crystalline state where membrane proteins cannot function and permeability is severely restricted.
+Incorrect1: Saturated tails have no kinks; unsaturated tails have kinks from double bonds
+Incorrect2: 18-carbon tails are typical membrane length; length isn't the issue
+Incorrect3: Head groups remain charged; temperature affects tail packing, not head charge
+---
+What structural feature of chitin makes it suitable for forming tough exoskeletons in arthropods while cellulose forms strong plant cell walls?
+A) Chitin contains sulfur cross-links between polymer chains
+B) Chitin has nitrogen-containing acetyl amino groups that form additional hydrogen bonds
+C) Chitin is branched while cellulose is linear, providing more connections
+D) Chitin uses α-1,4 linkages while cellulose uses β-1,4 linkages
+Correct: B
+Reasoning: Both chitin and cellulose are linear polymers with β-1,4 linkages. However, chitin's monomers are N-acetylglucosamine, where the -OH group on carbon 2 is replaced by an acetylamino group (-NHCOCH₃). These groups form additional hydrogen bonds between parallel chains, making chitin even stronger and more chemically resistant than cellulose, ideal for protective exoskeletons.
+Incorrect1: Chitin contains no sulfur; it's a polysaccharide
+Incorrect2: Chitin is unbranched like cellulose
+Incorrect3: Both use β-1,4 linkages; the difference is the acetyl amino group
+---
+How does the amphipathic nature of phospholipids drive the spontaneous formation of the lipid bilayer in aqueous environments?
+A) Hydrophilic tails dissolve in water while hydrophobic heads form hydrogen bonds with each other
+B) Hydrophobic tails are excluded from water and associate internally while hydrophilic heads interact with water
+C) Covalent bonds form between adjacent phospholipid heads to create a stable sheet
+D) Water molecules form an ordered cage around the entire phospholipid, preventing interaction
+Correct: B
+Reasoning: Phospholipids have hydrophilic phosphate-containing heads and hydrophobic fatty acid tails. In water, the hydrophobic effect drives the tails to associate together to minimize their contact with water, while the hydrophilic heads face the aqueous environment. This thermodynamically favored arrangement spontaneously forms a bilayer with tails inward, heads outward, stabilized by hydrophobic interactions and van der Waals forces.
+Incorrect1: Heads are hydrophilic, tails are hydrophobic; this reverses their properties
+Incorrect2: No covalent bonds form between adjacent phospholipids in the bilayer
+Incorrect3: Water cages form around hydrophobic molecules but this isn't the stable final structure
+---
+Why do cellulose molecules aggregate into strong microfibrils while starch molecules remain as soluble granules?
+A) Cellulose has β-1,4 linkages that create linear chains capable of extensive interchain hydrogen bonding
+B) Starch has β-1,4 linkages that create helical structures preventing aggregation
+C) Cellulose contains branching that allows cross-linking between chains
+D) Starch molecules are much larger and cannot align properly
+Correct: A
+Reasoning: Cellulose's β-1,4 linkages cause each glucose unit to be inverted, producing straight, unbranched chains that lie parallel to each other. Numerous hydroxyl groups along these chains form extensive interchain hydrogen bonds, creating crystalline microfibrils with high tensile strength. Starch's α-1,4 linkages produce coiled helices that do not align for such extensive interchain bonding.
+Incorrect1: Starch uses α-1,4 linkages, not β
+Incorrect2: Cellulose is unbranched, not branched
+Incorrect3: Starch molecules vary in size but this isn't the key difference in aggregation
+---
+What is the direct consequence of the fact that transfer RNA molecules have a cloverleaf secondary structure?
+A) They can catalyze peptide bond formation during translation
+B) They present the amino acid attachment site and anticodon loop at opposite ends
+C) They form the structural framework of ribosomal subunits
+D) They can directly bind to DNA to retrieve genetic information
+Correct: B
+Reasoning: The cloverleaf structure of tRNA, with its three stem-loops, places the amino acid attachment site (3' CCA end) at one end and the anticodon loop at the opposite end. This spatial arrangement allows the tRNA to simultaneously carry a specific amino acid and position its anticodon for base-pairing with the mRNA codon on the ribosome during protein synthesis.
+Incorrect1: Peptide bond formation is catalyzed by rRNA (ribozyme activity)
+Incorrect2: Ribosomal RNA, not tRNA, forms the ribosome structure
+Incorrect3: mRNA carries genetic information from DNA; tRNA doesn't bind DNA
+---
+How does the specific heat capacity of water directly stabilize aquatic ecosystems during seasonal temperature changes?
+A) Water releases heat quickly when air temperature drops, warming the environment
+B) Water absorbs large amounts of heat with minimal temperature increase, preventing rapid fluctuations
+C) Water expands when heated, creating circulation patterns that distribute heat evenly
+D) Water forms hydrogen bonds that break easily, releasing stored heat energy
+Correct: B
+Reasoning: Water's high specific heat capacity (4.18 J/g°C) means it can absorb or release substantial thermal energy with only small changes in its own temperature. This property allows large bodies of water to act as thermal buffers, moderating temperature extremes in adjacent terrestrial environments and maintaining relatively stable temperatures for aquatic organisms despite seasonal air temperature variations.
+Incorrect1: Water releases heat slowly, not quickly, due to high specific heat
+Incorrect2: Expansion and circulation are related to density changes, not specific heat
+Incorrect3: Breaking hydrogen bonds absorbs heat, which contributes to high specific heat but doesn't directly release stored energy
+---
+Why is the 5' → 3' directionality of nucleic acid synthesis fundamentally important for genetic information processing?
+A) It allows both strands to be synthesized simultaneously in the same direction
+B) It ensures that the sugar-phosphate backbone has uniform chemical polarity for enzyme recognition
+C) It permits nucleotide addition only at the 3'-OH end where the next phosphate attaches
+D) It prevents the formation of phosphodiester bonds between non-adjacent nucleotides
+Correct: C
+Reasoning: Nucleic acid polymerases catalyze the attack of the 3'-OH group of the growing strand on the α-phosphate of an incoming nucleoside triphosphate. This chemical mechanism requires a free 3'-OH and drives synthesis exclusively in the 5'→3' direction. This universal directionality is essential for processes like DNA replication, transcription, and translation, where enzymes recognize and move along strands with specific polarity.
+Incorrect1: The two strands are antiparallel, so simultaneous synthesis occurs in opposite directions
+Incorrect2: Enzymes recognize polarity, but the mechanistic reason is the 3'-OH requirement
+Incorrect3: All phosphodiester bonds are between adjacent nucleotides regardless of direction
+---
+How does the presence of both α-1,4 and α-1,6 glycosidic linkages in glycogen create functional advantage over purely linear glucose polymers?
+A) The α-1,6 linkages make glycogen resistant to enzymatic breakdown
+B) Branching creates multiple non-reducing ends for simultaneous glucose release
+C) Branched structure allows glycogen to dissolve more readily in water
+D) α-1,6 linkages store more energy per bond than α-1,4 linkages
+Correct: B
+Reasoning: Glycogen's α-1,6 branching points every 8-12 residues create numerous terminal glucose units with free 4'-OH groups (non-reducing ends). Glycogen phosphorylase acts only at these non-reducing ends, releasing glucose-1-phosphate. The highly branched structure provides many sites for simultaneous enzymatic attack, enabling rapid glucose mobilization during sudden energy demands like the "fight or flight" response.
+Incorrect1: α-1,6 linkages are actually cleaved by debranching enzyme; they don't confer resistance
+Incorrect2: Solubility differences aren't the primary functional advantage
+Incorrect3: All glycosidic bonds store similar chemical energy
+---
+What experimental observation would directly demonstrate that DNA strands are antiparallel rather than parallel?
+A) Measuring the 2 nm diameter of the double helix
+B) Determining that adenine always pairs with thymine in equal amounts
+C) Showing that one strand's 5' end aligns with the other strand's 3' end in the crystal structure
+D) Observing that the double helix unwinds during replication
+Correct: C
+Reasoning: X-ray crystallography and chemical sequencing reveal that in the double helix, the sugar-phosphate backbones run in opposite directions. This means at each end of the helix, one strand terminates with a 5'-phosphate while the complementary strand terminates with a 3'-OH. Direct structural determination shows this antiparallel orientation is necessary for proper base stacking and hydrogen bonding.
+Incorrect1: 2 nm diameter results from purine-pyrimidine pairing, not directionality
+Incorrect2: Base pairing rules exist regardless of strand direction
+Incorrect3: Unwinding occurs during replication but doesn't prove antiparallel nature
+---
+Why can starch be digested by humans while cellulose, despite both being glucose polymers, passes through the digestive system intact?
+A) Cellulose has β-1,4 linkages that human enzymes cannot hydrolyze due to different stereochemistry
+B) Starch has branching points that make it accessible to enzymes while cellulose is linear
+C) Cellulose forms crystalline structures that are physically impenetrable to enzymes
+D) Starch is soluble in water while cellulose is insoluble, preventing enzyme access
+Correct: A
+Reasoning: Humans produce amylase, which specifically hydrolyzes α-1,4 glycosidic linkages found in starch. Cellulose contains β-1,4 linkages where the glycosidic bond has different stereochemistry. The active site of human digestive enzymes has a shape complementary to α-linked glucose polymers but cannot accommodate the geometry of β-linked glucose units, making cellulose indigestible.
+Incorrect1: Branching isn't the determining factor; some linear α-polymers are digestible
+Incorrect2: Crystallinity contributes to resistance but the fundamental reason is linkage stereochemistry
+Incorrect3: Solubility differences result from linkage type, but enzymes could still access insoluble substrates if bonds were compatible
+---
+How does the coordination of four polypeptide subunits in hemoglobin via heme groups enable cooperative oxygen binding?
+A) Each heme group directly connects to the next through disulfide bridges
+B) Oxygen binding to one heme induces conformational changes transmitted to other subunits
+C) Heme groups compete for oxygen, increasing overall affinity
+D) The iron atoms share electrons through the polypeptide chains
+Correct: B
+Reasoning: Hemoglobin's quaternary structure positions four heme-containing subunits in specific spatial arrangement. When oxygen binds to one heme's iron, it pulls the iron into the porphyrin plane, causing conformational changes in that globin subunit. These changes are transmitted across subunit interfaces, altering the shape of other subunits and increasing their oxygen affinity—the molecular basis of cooperativity.
+Incorrect1: Heme groups don't directly connect; subunits interact non-covalently
+Incorrect2: Competition would decrease, not increase, overall affinity
+Incorrect3: Iron atoms don't share electrons through protein chains
+---
+What critical property of water's hydrogen bonding network explains both its high surface tension and its role as a transport medium in plants?
+A) Water molecules form temporary covalent bonds with each other
+B) Cohesion from hydrogen bonds allows water columns to resist tension without breaking
+C) Adhesion to xylem walls requires complete breakdown of hydrogen bonds
+D) Surface tension results from ionic interactions between water molecules
+Correct: B
+Reasoning: Water's extensive hydrogen bonding creates strong cohesive forces between molecules. In plant xylem, this cohesion allows water to form continuous columns that can withstand tremendous tension (negative pressure) during transpiration without breaking. Simultaneously, hydrogen bonds create surface tension at air-water interfaces, though cohesion is the property enabling transport under tension.
+Incorrect1: Hydrogen bonds are intermolecular, not covalent bonds
+Incorrect2: Adhesion involves hydrogen bonds to xylem walls without complete breakdown
+Incorrect3: Surface tension results from hydrogen bonding, not ionic interactions
+---
+Why do phospholipids form bilayers while detergents (with single hydrophobic tails) typically form micelles in water?
+A) Detergents have larger head groups that cannot pack into bilayers
+B) Two tails create a cylindrical molecular shape that favors bilayer packing
+C) Phospholipids are larger molecules that cannot fit into micelles
+D) Detergents form covalent bonds with each other, preventing bilayer formation
+Correct: B
+Reasoning: Molecular geometry determines aggregation shape. Phospholipids with two bulky hydrophobic tails and a smaller head group have a cylindrical shape, packing efficiently into bilayers where tails from both sides meet. Detergents with single tails have a conical shape (large head, single tail), favoring curved micelles where tails are sequestered in the interior and heads face water.
+Incorrect1: Head group size contributes but the key is tail number creating shape
+Incorrect2: Size alone doesn't determine aggregation form; shape is critical
+Incorrect3: Detergents don't form covalent bonds between molecules
+---
+How does the presence of the 5' cap and poly-A tail on eukaryotic mRNA functionally distinguish it from prokaryotic mRNA?
+A) They provide binding sites for ribosomes during translation initiation
+B) They protect the mRNA from exonucleases and facilitate nuclear export
+C) They contain the genetic code for protein synthesis
+D) They serve as templates for DNA synthesis during reverse transcription
+Correct: B
+Reasoning: The 5' cap (7-methylguanosine) and 3' poly-A tail are eukaryotic mRNA modifications that protect both ends from rapid degradation by exonucleases. The cap also facilitates nuclear export and ribosome binding, while the poly-A tail enhances translation efficiency and stability. Prokaryotic mRNAs lack these modifications, making them less stable with shorter half-lives.
+Incorrect1: Ribosome binding in prokaryotes uses the Shine-Dalgarno sequence, not a cap
+Incorrect2: The genetic code is in the coding sequence between the modifications
+Incorrect3: Reverse transcription is viral, not a normal eukaryotic function
+---
+What is the fundamental difference between aldoses and ketoses that affects their chemical reactivity?
+A) Aldoses contain an aldehyde group at the end while ketoses contain a ketone group within the carbon chain
+B) Aldoses have fewer carbon atoms than ketoses
+C) Ketoses can form ring structures while aldoses cannot
+D) Aldoses are reducing sugars while ketoses are non-reducing
+Correct: A
+Reasoning: The functional group position fundamentally distinguishes these monosaccharide classes. Aldoses (like glucose) have the carbonyl group as an aldehyde (C=O at carbon 1), making the terminal carbon part of the carbonyl. Ketoses (like fructose) have the carbonyl as a ketone (C=O at carbon 2), placing it within the carbon chain. This affects cyclization patterns and chemical reactivity.
+Incorrect1: Both classes include various carbon chain lengths
+Incorrect2: Both form ring structures via hemiacetal/hemiketal formation
+Incorrect3: Both can be reducing sugars; ketoses can tautomerize to aldoses
+---
+How does the quaternary structure of hemoglobin enable its function more effectively than a single polypeptide chain with the same heme groups?
+A) Quaternary structure allows cooperative oxygen binding through subunit interactions
+B) Multiple subunits increase the total number of heme groups possible
+C) Subunit assembly creates a larger surface area for oxygen diffusion
+D) Quaternary structure prevents heme oxidation more effectively
+Correct: A
+Reasoning: Hemoglobin's tetrameric structure (two α and two β subunits) enables allosteric interactions essential for cooperative oxygen binding. Conformational changes in one subunit upon oxygen binding are transmitted across subunit interfaces, altering the oxygen affinity of remaining subunits. This produces the sigmoidal oxygen-binding curve critical for efficient oxygen loading in lungs and unloading in tissues—a property impossible in a monomeric protein.
+Incorrect1: Simply having more hemes doesn't create cooperativity
+Incorrect2: Surface area isn't the limiting factor for oxygen binding
+Incorrect3: Heme oxidation prevention isn't the primary function of quaternary structure
+---
+What explains why sucrose, despite being a disaccharide, shows no reducing activity while maltose and lactose do?
+A) Sucrose has both anomeric carbons involved in the glycosidic bond
+B) Sucrose contains fructose which cannot form open-chain structures
+C) Maltose and lactose have fewer carbon atoms than sucrose
+D) Sucrose forms a ring structure while maltose remains linear
+Correct: A
+Reasoning: In sucrose, the glycosidic bond forms between the anomeric carbon of glucose (C1) and the anomeric carbon of fructose (C2). This 1↔2 linkage means both anomeric carbons are tied up in the bond, preventing either monosaccharide from opening to the free aldehyde or ketone form required for reducing activity. In maltose and lactose, one anomeric carbon remains free for ring-opening.
+Incorrect1: Fructose can open to ketone form; the issue is both anomeric carbons are bonded
+Incorrect2: Carbon number (C12H22O11) is identical for all three disaccharides
+Incorrect3: All form rings; reducing ability depends on free anomeric carbon
+---
+How does the phenomenon of hydrophobic exclusion contribute to protein folding beyond simply burying non-polar amino acids?
+A) It creates covalent disulfide bonds between cysteine residues
+B) It drives the collapse of the polypeptide chain, bringing distant regions together for specific interactions
+C) It makes all hydrophobic amino acids migrate to the protein surface
+D) It generates energy by breaking hydrogen bonds between water molecules
+Correct: B
+Reasoning: Hydrophobic exclusion isn't just about burying non-polar groups; it's the driving force for the initial collapse of the polypeptide chain into a compact state. This collapse brings together amino acid residues that may be distant in the primary sequence, allowing them to form specific stabilizing interactions (hydrogen bonds, ionic bonds) that establish the precise tertiary structure.
+Incorrect1: Disulfide bonds form after folding and aren't driven by hydrophobic effect
+Incorrect2: Hydrophobic amino acids go to the interior, not surface
+Incorrect3: Energy comes from increased entropy of water released from ordered hydration shells, not from breaking water-water bonds
+---
+Why would a cell with membranes containing phospholipids having very short fatty acid tails struggle to survive at high temperatures?
+A) Short tails cannot form bilayers, only micelles
+B) Short tails have fewer van der Waals interactions, increasing membrane fluidity excessively
+C) Short tails are more saturated, making membranes too rigid
+D) Short tails cannot anchor membrane proteins properly
+Correct: B
+Reasoning: Membrane fluidity depends on tail length and saturation. Shorter fatty acid tails have fewer carbon atoms, reducing the surface area for van der Waals interactions between adjacent tails. At high temperatures, this already reduced interaction weakens further, potentially making the membrane too fluid and leaky to maintain proper barrier function and protein organization.
+Incorrect1: Short tails can still form bilayers; length affects fluidity, not basic structure
+Incorrect2: Short tails aren't necessarily more saturated; saturation is independent
+Incorrect3: Protein anchoring involves hydrophobic transmembrane domains; tail length affects this but fluidity is the primary survival issue at high temperature
+---
+How does the presence of both polar and non-polar regions in a single molecule enable phospholipids to form the structural basis of cell membranes?
+A) Polar regions dissolve in water while non-polar regions evaporate
+B) The dual nature allows simultaneous interaction with aqueous environments and sequestration of hydrophobic tails
+C) Polar heads form covalent bonds with each other while tails remain free
+D) Non-polar tails dissolve in water while polar heads repel each other
+Correct: B
+Reasoning: Phospholipids are amphipathic—they contain both hydrophilic (polar head) and hydrophobic (non-polar tails) regions. This dual nature is essential for bilayer formation: the hydrophilic heads interact favorably with the aqueous environments inside and outside the cell, while the hydrophobic tails are excluded from water and associate with each other in the bilayer interior, creating a stable barrier.
+Incorrect1: Non-polar tails don't evaporate; they're long-chain hydrocarbons
+Incorrect2: No covalent bonds form between heads in the bilayer
+Incorrect3: Non-polar tails don't dissolve in water; they're hydrophobic
+---
+What is the structural consequence of proline's unique cyclic side chain on protein secondary structure?
+A) Proline promotes alpha helix formation by restricting bond angles
+B) Proline introduces kinks or breaks in alpha helices because its nitrogen lacks hydrogen for backbone hydrogen bonding
+C) Proline enhances beta sheet formation through extended conformations
+D) Proline has no effect on secondary structure elements
+Correct: B
+Reasoning: Proline's side chain forms a ring that connects back to the backbone nitrogen, creating a rigid structure. This cyclic structure fixes the φ (phi) angle and, critically, leaves the nitrogen without a hydrogen atom for the normal backbone N-H···O=C hydrogen bond that stabilizes alpha helices. Consequently, proline acts as a helix breaker, introducing kinks or terminating helices.
+Incorrect1: Proline disrupts, not promotes, alpha helices
+Incorrect2: Proline doesn't specifically promote beta sheets; it's a helix breaker
+Incorrect3: Proline significantly affects secondary structure due to its unique structure
+---
+Why does RNA, despite being a single strand, often fold into complex three-dimensional structures while DNA typically remains as a double helix?
+A) RNA contains uracil which forms additional hydrogen bonds
+B) The 2'-OH group in RNA allows intra-strand hydrogen bonding and diverse base interactions
+C) RNA has a different sugar-phosphate backbone geometry
+D) DNA cannot form any secondary structure due to thymine
+Correct: B
+Reasoning: RNA's 2'-hydroxyl group on ribose enables it to participate in extensive intra-strand hydrogen bonding networks that stabilize complex tertiary structures. This functional group also allows RNA to form non-canonical base pairs and base-backbone interactions. DNA lacks this 2'-OH, limiting its structural diversity primarily to the canonical double helix maintained by inter-strand base pairing.
+Incorrect1: Uracil vs. thymine (methyl group) isn't the key structural difference
+Incorrect2: Backbone geometry is similar; the 2'-OH makes the difference
+Incorrect3: DNA forms many secondary structures (hairpins, cruciforms) under certain conditions
+---
+How does the hydrogen bonding pattern in beta-pleated sheets differ from that in alpha helices, and what structural consequence does this have?
+A) Beta sheets have hydrogen bonds parallel to the helix axis while alpha helices have perpendicular bonds
+B) Beta sheets involve hydrogen bonds between distant backbone regions while alpha helices bond between nearby turns
+C) Beta sheets use side chain hydrogen bonds while alpha helices use backbone bonds
+D) Beta sheets have no regular hydrogen bonding pattern
+Correct: B
+Reasoning: In alpha helices, the carbonyl oxygen of residue i hydrogen bonds to the amide hydrogen of residue i+4, creating bonds between nearby residues along the chain. In beta sheets, hydrogen bonds form between backbone atoms of residues that may be far apart in the primary sequence—either from different strands or distant segments of the same strand folded back—creating extended, sheet-like structures.
+Incorrect1: Bond orientation relative to axis differs, but the key is sequence distance between bonded residues
+Incorrect2: Both use backbone N-H and C=O groups, not side chains
+Incorrect3: Beta sheets have highly regular hydrogen bonding patterns
+---
+Why can lactose intolerance occur in adults while all infants produce sufficient lactase enzyme?
+A) Lactose structure changes as mammals age
+B) The gene for lactase is gradually silenced after weaning in most human populations
+C) Infants have different gut bacteria that produce lactase
+D) Adult stomach acid denatures lactase while infant stomach pH is neutral
+Correct: B
+Reasoning: Lactase production is genetically programmed to be high during infancy when milk is the primary food source. In most mammals and the majority of human populations (non-persistent), the lactase gene is transcriptionally down-regulated after weaning, reducing enzyme production. Some human populations have mutations that maintain lactase expression into adulthood (lactase persistence).
+Incorrect1: Lactose structure is identical regardless of age
+Incorrect2: Gut bacteria may metabolize lactose but don't produce human lactase
+Incorrect3: Stomach pH affects all proteins but isn't the regulatory mechanism for lactase expression
+---
+What critical role do trace elements like iron, zinc, and copper serve in biological systems despite their minute quantities?
+A) They provide structural support to cell walls
+B) They act as cofactors in enzyme active sites, enabling catalysis
+C) They form the backbone of carbohydrate polymers
+D) They maintain osmotic balance across membranes
+Correct: B
+Reasoning: Trace elements are essential because they function as cofactors—non-protein components required for enzyme activity. Iron in heme enables oxygen binding and electron transfer, zinc in carbonic anhydrase catalyzes CO₂ hydration, and copper in cytochrome oxidase facilitates electron transport. Their scarcity belies their critical catalytic roles that major elements cannot perform.
+Incorrect1: Structural support comes from macromolecules, not trace elements
+Incorrect2: Carbohydrates contain C,H,O only; trace elements aren't in backbones
+Incorrect3: Osmotic balance is maintained by electrolytes (Na⁺, K⁺, Cl⁻), not trace elements
+---
+How does the presence of an aldehyde group in glyceraldehyde (a triose) enable it to participate in reactions that dihydroxyacetone cannot directly perform?
+A) Aldehydes can form hemiacetals with alcohols while ketones cannot
+B) The aldehyde group can be oxidized to carboxylic acid, providing reducing power
+C) Glyceraldehyde has more carbon atoms than dihydroxyacetone
+D) Aldehydes are more soluble in water than ketones
+Correct: B
+Reasoning: Glyceraldehyde's aldehyde group at C1 can be oxidized to a carboxyl group, making it a reducing sugar that can donate electrons in reactions. This property is fundamental in glycolysis where glyceraldehyde-3-phosphate is oxidized. Dihydroxyacetone phosphate (a ketose) cannot be directly oxidized; it must first be isomerized to glyceraldehyde-3-phosphate by triose phosphate isomerase.
+Incorrect1: Ketones can form hemiketals with alcohols; both can cyclize
+Incorrect2: Both are trioses with 3 carbons
+Incorrect3: Solubility differences are minor; the key is oxidation potential
+---
+Why do phospholipids with unsaturated fatty acid tails increase membrane fluidity at low temperatures compared to saturated tails?
+A) Unsaturated tails are longer, creating more space between molecules
+B) Double bonds introduce kinks that prevent tight packing of hydrocarbon chains
+C) Unsaturated tails have higher energy content that melts at lower temperatures
+D) Double bonds create ionic interactions that repel adjacent molecules
+Correct: B
+Reasoning: Unsaturated fatty acids contain cis double bonds that introduce rigid kinks in the hydrocarbon chain. These kinks prevent the tails from packing closely together, disrupting the regular van der Waals interactions that would otherwise cause the membrane to enter a rigid gel phase at low temperatures. The resulting disorder maintains membrane fluidity in cold conditions.
+Incorrect1: Unsaturated tails aren't systematically longer; chain length is independent of saturation
+Incorrect2: Energy content differences are negligible; fluidity is about packing
+Incorrect3: Double bonds are non-polar; no ionic interactions occur
+---
+How does the fact that DNA uses thymine while RNA uses uracil contribute to genetic stability?
+A) Thymine forms stronger hydrogen bonds with adenine than uracil does
+B) 5-methyl group on thymine allows repair enzymes to distinguish deaminated cytosine from thymine
+C) Uracil cannot pair with adenine in double-stranded structures
+D) Thymine prevents formation of secondary structures that could cause mutations
+Correct: B
+Reasoning: Cytosine can spontaneously deaminate to form uracil. If DNA contained uracil normally, this deamination would create uracil that the cell couldn't distinguish from normal bases, leading to mutations after replication. DNA's use of thymine (5-methyluracil) means any uracil appearing in DNA is recognized as damaged cytosine and removed by repair enzymes, preserving genetic information.
+Incorrect1: Thymine and uracil form similarly strong hydrogen bonds with adenine
+Incorrect2: Uracil pairs with adenine normally in RNA; the issue is distinguishing damage
+Incorrect3: Thymine doesn't prevent secondary structures; both can form them
+---
+What explains why starch-iodine complex appears blue-black while glycogen-iodine complex appears reddish-brown?
+A) Iodine reacts differently with the reducing ends of each polymer
+B) The longer, less branched helices of amylose accommodate more iodine molecules in a linear arrangement
+C) Glycogen contains protein impurities that alter iodine color
+D) Starch has both amylose and amylopectin while glycogen is pure amylopectin
+Correct: B
+Reasoning: The color results from iodine molecules (I₃⁻) packing inside the helical coils of amylose (the linear component of starch). Amylose forms long, relatively unbranched helices that can accommodate extended linear arrays of iodine, producing the blue-black color. Glycogen and amylopectin have highly branched structures with shorter helical segments, allowing only smaller, disordered iodine clusters that appear reddish-brown.
+Incorrect1: Reducing ends are rare and don't significantly affect iodine binding
+Incorrect2: Glycogen doesn't contain significant protein; color difference is structural
+Incorrect3: Starch contains both components, but amylose creates the characteristic blue
+---
+How does the quaternary structure of collagen differ fundamentally from that of hemoglobin, and what functional consequence does this have?
+A) Collagen's triple helix uses covalent cross-links for tensile strength while hemoglobin uses non-covalent subunit interactions
+B) Collagen has four subunits while hemoglobin has three
+C) Collagen subunits are identical while hemoglobin subunits are all different
+D) Collagen uses hydrogen bonds exclusively while hemoglobin uses disulfide bonds
+Correct: A
+Reasoning: Collagen consists of three polypeptide chains wound into a tight triple helix, stabilized by extensive interchain hydrogen bonds and reinforced by covalent cross-links (aldol cross-links) between lysine and hydroxylysine residues. This provides enormous tensile strength for structural roles. Hemoglobin's four subunits associate through non-covalent interactions, allowing the conformational flexibility needed for cooperative oxygen binding.
+Incorrect1: Collagen has three subunits; hemoglobin has four (two α, two β)
+Incorrect2: Hemoglobin has two types; collagen may have identical or different chains
+Incorrect3: Hemoglobin uses no disulfide bonds; collagen's strength comes from both H-bonds and covalent cross-links
+---
+Why do red blood cells require the flexible, disc-shaped morphology enabled by spectrin, and how does this relate to their function?
+A) Disc shape increases surface area for oxygen diffusion while flexibility allows passage through narrow capillaries
+B) Spherical shape would hold more hemoglobin but cannot pass through vessels
+C) Flexibility prevents the cells from sticking to each other
+D) Disc shape allows the nucleus to remain in mature mammalian red blood cells
+Correct: A
+Reasoning: Spectrin forms a meshwork under the plasma membrane, maintaining the biconcave disc shape that maximizes surface area-to-volume ratio for efficient oxygen diffusion. This cytoskeleton also provides the deformability necessary for erythrocytes to squeeze through capillaries narrower than their diameter without hemolyzing, then spring back to original shape.
+Incorrect1: Spherical shape would have lower surface area for diffusion
+Incorrect2: Flexibility helps prevent sticking but this isn't primary
+Incorrect3: Mature mammalian RBCs lack nuclei regardless of shape
+---
+What is the chemical basis for the observation that cellulose is insoluble in water while starch forms colloidal suspensions?
+A) Cellulose's β-1,4 linkages create linear chains that crystallize through interchain hydrogen bonding
+B) Starch's α-1,4 linkages create helical structures that trap water molecules
+C) Cellulose has fewer hydroxyl groups available for hydrogen bonding with water
+D) Starch molecules are smaller and therefore more soluble
+Correct: A
+Reasoning: Cellulose chains are straight and align perfectly, allowing extensive interchain hydrogen bonding between hydroxyl groups of adjacent chains. These strong intermolecular forces create crystalline microfibrils that water cannot penetrate or dissolve. Starch's helical coils limit interchain bonding, allowing water molecules to interact with accessible hydroxyl groups and form hydrated suspensions.
+Incorrect1: Both have similar numbers of hydroxyl groups; availability differs due to packing
+Incorrect2: Both trap water in different ways, but cellulose's crystallinity prevents dissolution
+Incorrect3: Starch molecules can be enormous; size isn't the solubility determinant
+---
+How does the penetration effect explain why 4s orbitals fill before 3d orbitals despite 4s having higher principal quantum number?
+A) 4s electrons experience less shielding than 3d electrons
+B) 4s orbitals have no angular nodes, allowing electrons to spend time closer to nucleus
+C) 3d orbitals have lower energy in all atoms regardless of electron configuration
+D) 4s orbitals are larger and therefore experience more nuclear attraction
+Correct: B
+Reasoning: The 4s orbital has no angular nodes (l=0), meaning its radial distribution function has significant amplitude near the nucleus. This penetration through inner electron clouds means 4s electrons experience higher effective nuclear charge than 3d electrons (which have two angular nodes keeping them away). For atoms up to Z=20, this makes 4s lower in energy despite its higher n.
+Incorrect1: 4s electrons are actually less shielded due to penetration
+Incorrect2: 3d can be lower after electron configurations change
+Incorrect3: Orbital size relates to n, but penetration determines effective nuclear charge
+---
+What is the functional significance of the major and minor grooves in the DNA double helix?
+A) They provide binding sites for proteins that recognize specific DNA sequences
+B) They allow water molecules to enter and destabilize the helix during replication
+C) They are artifacts of crystallography with no biological function
+D) They enable the two strands to separate more easily during transcription
+Correct: A
+Reasoning: The asymmetric positioning of base pairs relative to the sugar-phosphate backbone creates major and minor grooves of different widths. The edges of the bases are exposed in these grooves, presenting distinctive patterns of hydrogen bond donors and acceptors that vary with base sequence. DNA-binding proteins (transcription factors, repressors) use these patterns to recognize and bind specific sequences without unwinding the helix.
+Incorrect1: Water enters grooves but this isn't their primary function
+Incorrect2: They are real structural features with demonstrated functions
+Incorrect3: Strand separation occurs through helix unwinding, not groove-mediated destabilization
+---
+How does chitin's chemical structure make it resistant to degradation by most organisms while cellulose is readily broken down by many?
+A) Chitin's β-1,4 linkages are stronger than cellulose's β-1,4 linkages
+B) The acetylamino groups on chitin require specific enzymes (chitinases) that most organisms lack
+C) Chitin forms crystalline structures that enzymes cannot penetrate
+D) Chitin contains sulfur cross-links that resist hydrolysis
+Correct: B
+Reasoning: Both chitin and cellulose have β-1,4 linkages, but chitin's monomers are N-acetylglucosamine with an acetylamino group at C2. This modification means that cellulases (which break down cellulose) cannot act on chitin because their active sites are specific for recognizing and cleaving between unmodified glucose units. Only organisms producing chitinases—with active sites complementary to N-acetylglucosamine—can degrade chitin.
+Incorrect1: The glycosidic bonds themselves have similar strength
+Incorrect2: Both form crystalline structures; crystallinity isn't the unique factor
+Incorrect3: Chitin contains no sulfur; it's a polysaccharide
+---
+Why do triacylglycerols store more energy per gram than carbohydrates despite carbohydrates having more oxygen?
+A) The carbon atoms in fatty acids are more reduced (more C-H bonds) than in carbohydrates
+B) Triacylglycerols have higher molecular weight than carbohydrates
+C) Carbohydrates contain water of hydration that adds weight without energy
+D) The glycerol backbone provides additional energy not present in sugars
+Correct: A
+Reasoning: Energy yield during oxidation depends on the reduction state of carbon. Fatty acids in triacylglycerols have long hydrocarbon chains with many C-H and C-C bonds and few oxygens. Carbohydrates have many oxygens already partially oxidizing the carbons. Complete oxidation of fatty acids therefore yields more ATP per gram (~9 kcal/g) compared to carbohydrates (~4 kcal/g).
+Incorrect1: Molecular weight doesn't determine energy density; chemical composition does
+Incorrect2: Carbohydrates don't contain bound water; they're anhydrous
+Incorrect3: Glycerol contribution is small; fatty acids provide most energy
+---
+How does the 5' → 3' directionality of DNA synthesis create the "lagging strand" problem during replication?
+A) DNA polymerase can only add nucleotides to a 3'-OH, but the two template strands are antiparallel
+B) The leading strand template is degraded during replication
+C) Helicase unwinds only one strand at a time
+D) Primase cannot synthesize RNA primers on the lagging strand
+Correct: A
+Reasoning: DNA polymerases catalyze addition only to the 3'-OH of the growing strand, forcing synthesis in the 5'→3' direction. Since the two template strands are antiparallel, the polymerase moving toward the replication fork on one template (leading strand) can synthesize continuously. On the other template, synthesis must occur away from the fork in short Okazaki fragments (lagging strand) that are later joined.
+Incorrect1: Both strands remain intact; neither is degraded
+Incorrect2: Helicase unwinds both strands simultaneously
+Incorrect3: Primase synthesizes primers on both strands; lagging strand requires multiple primers
+---
+What is the thermodynamic driving force for protein folding beyond simple hydrophobic burial?
+A) Formation of maximum number of weak interactions (hydrogen bonds, van der Waals) with optimal geometry
+B) Complete dehydration of the protein interior
+C) Formation of covalent peptide bonds between side chains
+D) Maximum exposure of charged groups to the protein surface
+Correct: A
+Reasoning: While hydrophobic exclusion drives chain collapse, the native structure is stabilized by the collective formation of thousands of weak interactions—hydrogen bonds between backbone and side chains, van der Waals contacts from close packing, and ionic interactions—all with precise geometry. The native state represents the structure maximizing these stabilizing interactions while maintaining hydrophobic burial.
+Incorrect1: Complete dehydration isn't possible; structured water remains
+Incorrect2: No new covalent bonds form during folding (except disulfides in some proteins)
+Incorrect3: Charged groups must be balanced; maximum exposure would be destabilizing
+---
+How does the presence of both aminoacyl-tRNA synthetase enzymes and the degeneracy of the genetic code ensure accurate protein synthesis?
+A) Synthetases charge tRNAs with correct amino acids while degeneracy allows multiple codons for one amino acid without affecting accuracy
+B) Degeneracy ensures each amino acid has only one tRNA
+C) Synthetases proofread mRNA sequences before translation
+D) Degeneracy prevents mutations by making all codons identical
+Correct: A
+Reasoning: Accuracy requires two distinct mechanisms: First, each aminoacyl-tRNA synthetase must attach the correct amino acid to its corresponding tRNA(s) (the "second genetic code"). Second, degeneracy means most amino acids are specified by multiple codons, recognized by different tRNAs. This redundancy doesn't compromise accuracy because each codon-tRNA interaction maintains fidelity, while allowing evolutionary flexibility.
+Incorrect1: Each amino acid typically has multiple tRNAs due to degeneracy
+Incorrect2: Synthetases act on tRNAs, not mRNA
+Incorrect3: Degeneracy doesn't make codons identical; it provides multiple codons for same amino acid
+---
+Why does the ionization of water (H₂O ⇌ H⁺ + OH⁻) have profound biological significance despite occurring to a very small extent?
+A) It provides the H⁺ and OH⁻ ions that determine pH and participate in countless enzymatic reactions
+B) It generates the oxygen required for cellular respiration
+C) It creates the energy currency for ATP synthesis
+D) It allows water to form hydrogen bonds with dissolved solutes
+Correct: A
+Reasoning: Although only about 10⁻⁷ M of each ion exists at neutral pH, these H⁺ and OH⁻ concentrations are critically regulated because they affect the ionization state of every amino acid side chain, nucleotide base, and metabolic intermediate. Enzyme catalysis, membrane potential, and signal transduction all depend exquisitely on the precise H⁺ concentration maintained by this equilibrium.
+Incorrect1: Oxygen comes from photosynthesis, not water ionization
+Incorrect2: ATP synthesis uses proton gradients, not direct energy from water ionization
+Incorrect3: Hydrogen bonding occurs between polar molecules, independent of ionization
+---
+How does the unique structure of transfer RNA's acceptor stem and anticodon loop enable it to function as an adaptor molecule?
+A) Both ends contain identical nucleotide sequences for redundancy
+B) The 3' CCA end carries amino acid while the anticodon loop base-pairs with mRNA codons
+C) The D-loop binds to ribosomes while the T-loop binds to aminoacyl-tRNA synthetase
+D) The entire tRNA molecule base-pairs with mRNA along its length
+Correct: B
+Reasoning: tRNA's L-shaped three-dimensional structure positions two functionally critical regions at opposite ends. The acceptor stem terminates in the conserved 3'-CCA sequence where the amino acid is esterified. The anticodon loop, at the other end, contains the triplet that base-pairs with mRNA codons. This spatial separation allows the tRNA to simultaneously bring a specific amino acid into position while reading the genetic code.
+Incorrect1: The ends have different sequences and functions
+Incorrect2: The loops have specific functions but the key is acceptor stem and anticodon
+Incorrect3: tRNA doesn't base-pair extensively with mRNA beyond the anticodon
+---
+What property of water's high heat of vaporization makes sweating an effective cooling mechanism?
+A) Water releases heat when it evaporates, cooling the surroundings
+B) Breaking hydrogen bonds during vaporization absorbs large amounts of heat from the body
+C) Sweat contains salts that conduct heat away from the skin
+D) Evaporation creates a temperature gradient that draws heat from deeper tissues
+Correct: B
+Reasoning: Water's high heat of vaporization (574 cal/g) results from the energy required to break the extensive hydrogen bonding network before molecules can escape as vapor. When sweat evaporates from skin, this energy is absorbed from the body as heat, providing efficient cooling. The phase change from liquid to vapor is endothermic, directly removing thermal energy.
+Incorrect1: Evaporation absorbs heat; condensation releases it
+Incorrect2: Salts contribute minimally; water's properties dominate
+Incorrect3: Gradient forms but the fundamental mechanism is endothermic phase change
+---
+Why does hemoglobin's oxygen-binding curve have a sigmoidal shape while myoglobin's curve is hyperbolic?
+A) Hemoglobin has four subunits that interact cooperatively while myoglobin is a single subunit
+B) Hemoglobin binds oxygen more weakly than myoglobin at all oxygen tensions
+C) Myoglobin has heme groups while hemoglobin uses iron-sulfur clusters
+D) Hemoglobin undergoes oxidation during oxygen binding while myoglobin does not
+Correct: A
+Reasoning: Myoglobin is a monomeric protein with a single heme; its oxygen binding follows simple equilibrium (hyperbolic curve). Hemoglobin's tetrameric structure enables cooperativity: oxygen binding to one subunit increases the affinity of remaining subunits through conformational changes. This produces the sigmoidal curve essential for efficient oxygen unloading in tissues where partial pressure is low.
+Incorrect1: Hemoglobin actually has higher affinity at high O₂ (lungs) and lower at low O₂ (tissues)
+Incorrect2: Both use heme with iron; no iron-sulfur clusters
+Incorrect3: Oxidation (methemoglobin) is pathological, not normal function.
+---
+What structural feature distinguishes a ketose like fructose from an aldose like glucose when both are in their linear form?
+A) Fructose has a five-carbon ring structure while glucose has a six-carbon ring
+B) Fructose contains a ketone group, while glucose contains an aldehyde group
+C) Fructose is always a pentose, while glucose is always a hexose
+D) Glucose is insoluble in water, while fructose is highly soluble
+Correct: B
+Reasoning: The primary classification of monosaccharides is based on the functional group. Ketoses, like fructose, have a ketone group (C=O) within the carbon chain, whereas aldoses, like glucose, have an aldehyde group (H-C=O) at the end.
+Incorrect1: Ring structures form from linear forms, but the distinction between ketose and aldose is based on the functional group, not the ring size. Both fructose and glucose are typically hexoses.
+Incorrect3: Fructose and glucose are both hexoses (6C), though fructose is a ketone and glucose is an aldehyde.
+Incorrect4: Both fructose and glucose are monosaccharides and are highly soluble in water.
+---
+How do the roles of DNA and RNA fundamentally differ in directing cellular activities?
+A) DNA replicates within the cytoplasm, while RNA remains in the nucleus
+B) DNA stores genetic blueprints, while RNA executes protein synthesis using those plans
+C) DNA catalyzes metabolic reactions, while RNA stores energy for the cell
+D) DNA provides structural support, while RNA transports molecules across membranes
+Correct: B
+Reasoning: DNA, located in chromosomes, serves as the long-term, stable repository of genetic information. RNA molecules (mRNA, tRNA, rRNA) are synthesized from DNA and directly participate in the various steps of translating that genetic information into functional proteins.
+Incorrect1: DNA is primarily in the nucleus; RNA is synthesized in the nucleus but functions in the cytoplasm.
+Incorrect3: Enzymes (proteins) catalyze metabolic reactions. RNA does not store energy.
+Incorrect4: Structural support is provided by the cytoskeleton (proteins). RNA is not a major component of transport across membranes.
+---
+In a laboratory synthesis of a triglyceride, if a fatty acid with a single double bond and one with no double bonds are used, how would the resulting lipid be classified?
+A) Saturated acylglycerol
+B) Polyunsaturated acylglycerol
+C) Monounsaturated acylglycerol
+D) Amphipathic lipid
+Correct: C
+Reasoning: The classification of fats is based on the fatty acid components. Since one fatty acid has a single double bond (monounsaturated) and another has none (saturated), the overall molecule contains at least one monounsaturated fatty acid, making it a monounsaturated acylglycerol (fat).
+Incorrect1: A saturated acylglycerol would require all fatty acids to have no double bonds.
+Incorrect2: A polyunsaturated acylglycerol would require at least one fatty acid to have two or more double bonds.
+Incorrect4: Amphipathic refers to having both hydrophilic and hydrophobic regions, a property of phospholipids, not the primary classification based on saturation.
+---`;
+
+function parseMCQsFromText(text) {
+    const blocks = text.split('---').map(b => b.trim()).filter(b => b.length > 0);
+    return blocks.map(block => {
+        const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+        let question = ''; let options = ['', '', '', '']; let correct = ''; let reasoning = ''; let inc1 = '', inc2 = '', inc3 = '';
+        for (let line of lines) {
+            if (!question && !line.match(/^[A-D]\)/) && !line.toLowerCase().startsWith('correct:') && !line.toLowerCase().startsWith('reasoning:') && !line.toLowerCase().startsWith('incorrect')) {
+                question = line;
+            } else if (line.match(/^A\)/i)) options[0] = line.substring(2).trim();
+            else if (line.match(/^B\)/i)) options[1] = line.substring(2).trim();
+            else if (line.match(/^C\)/i)) options[2] = line.substring(2).trim();
+            else if (line.match(/^D\)/i)) options[3] = line.substring(2).trim();
+            else if (line.toLowerCase().startsWith('correct:')) correct = line.substring(8).trim().toUpperCase();
+            else if (line.toLowerCase().startsWith('reasoning:')) reasoning = line.substring(10).trim();
+            else if (line.toLowerCase().startsWith('incorrect1:') || line.toLowerCase().startsWith('incorrect a:')) inc1 = line.substring(line.indexOf(':')+1).trim();
+            else if (line.toLowerCase().startsWith('incorrect2:') || line.toLowerCase().startsWith('incorrect b:')) inc2 = line.substring(line.indexOf(':')+1).trim();
+            else if (line.toLowerCase().startsWith('incorrect3:') || line.toLowerCase().startsWith('incorrect c:')) inc3 = line.substring(line.indexOf(':')+1).trim();
+        }
+        return {
+            question, options, correctAnswer: correct.charCodeAt(0)-65, correctLetter: correct,
+            reasoning, incorrectReasons: [inc1, inc2, inc3]
+        };
+    });
+}
+
+const originalQuizData = parseMCQsFromText(RAW_MCQS);
+
+// ================== CONSTANTS ==================
+const QUIZ_ACCESS_CODE_PREFIX = "MPX-";
+const ACADEMY_NAME = "MedPlex MDCAT Preparation Academy";
+const QUIZ_SUBJECT = "Biology (MDCAT)";
+const WEBSITE_LINK = "https://medplex-academy-testing-engine.web.app";
+const WHATSAPP_CONTACT = "03000047325";
+const TIME_PER_MCQ = 60;
+const MARK_PER_MCQ = 1;
+const NEGATIVE_MARKING = 0;
+const SUPPORT_EMAIL = 'results.medplex.pk@gmail.com';
+
+// Global state
+let currentQuizId = 'MPX-BIO-01-2026';
+let quizData = [];               // will hold copy of original (no shuffle)
+let currentQuestion = 0;
+let userAnswers = [];
+let timeLeft;
+let totalTimeInterval;
+let studentData = {};
+let studentAccessCode = "";
+
+// Mode for all-mcqs-page: 'all' or 'mistakes'
+let mcqDisplayMode = 'all';
+let mistakesData = [];   // array of { question, options, studentAnswer, correctAnswer, reasoning, incorrectReasons }
+
+// DOM elements
+const questionNavEl = document.getElementById('question-nav');
+const questionTextEl = document.getElementById('question-text');
+const optionsContainerEl = document.getElementById('options-container');
+const reasoningEl = document.getElementById('reasoning');
+const reasoningTextEl = document.getElementById('reasoning-text');
+const quizTitleEl = document.getElementById('quiz-title');
+const quizSubjectEl = document.getElementById('quiz-subject');
+const totalTimerEl = document.getElementById('timer');
+const quizProgressEl = document.getElementById('quiz-progress');
+const allMcqsList = document.getElementById('all-mcqs-list');
+const quizAccessCodeInput = document.getElementById('quizAccessCode');
+const quizAccessErrorBox = document.getElementById('quiz-error-box');
+const reasoningBtn = document.getElementById('reasoning-btn');
+const quizNotificationEl = document.getElementById('quiz-notification');
+const notificationTitleEl = document.getElementById('notification-title');
+const notificationMessageEl = document.getElementById('notification-message');
+const websiteLinkEl = document.getElementById('website-link');
+const whatsappContactLinkEl = document.getElementById('whatsapp-contact-link');
+const dmcContentEl = document.getElementById('dmc-content');
+const mcqsPageTitle = document.getElementById('mcqs-page-title');
+
+let currentMcqPage = 0;
+const mcqsPerPage = 10;
+
+// Device toggle
+document.getElementById('deviceToggle').addEventListener('click', function() {
+    document.body.classList.toggle('laptop-view');
+    this.textContent = document.body.classList.contains('laptop-view') ? 'Switch to Mobile View' : 'Switch to Laptop View';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedStudentData = localStorage.getItem('studentData');
+    if (storedStudentData) {
+        studentData = JSON.parse(storedStudentData);
+        document.getElementById('studentName').value = studentData['Student Name'] || '';
+        document.getElementById('fatherName').value = studentData['Father Name'] || '';
+        document.getElementById('gender').value = studentData['Gender'] || '';
+        document.getElementById('email').value = studentData['Email'] || '';
+        document.getElementById('mobile').value = studentData['Mobile'] || '';
+        document.getElementById('city').value = studentData['City'] || '';
+    }
+    const storedCode = localStorage.getItem('studentAccessCode');
+    if (storedCode) studentAccessCode = storedCode;
+    showPage('signin-page');
+    document.getElementById('toggleQuizAccessCode')?.addEventListener('click', () => togglePasswordVisibility('quizAccessCode', 'toggleQuizAccessCode'));
+});
+
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    document.querySelectorAll('.error-box, .success-box').forEach(el => el.style.display = 'none');
+}
+
+function togglePasswordVisibility(inputID, iconID) {
+    const passwordInput = document.getElementById(inputID);
+    const toggleIcon = document.getElementById(iconID);
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash'); toggleIcon.classList.add('fa-eye');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye'); toggleIcon.classList.add('fa-eye-slash');
+    }
+}
+
+function showQuizNotification(title, message, type = 'info') {
+    notificationTitleEl.textContent = title;
+    notificationMessageEl.textContent = message;
+    quizNotificationEl.classList.remove('warning', 'error');
+    if (type === 'warning') quizNotificationEl.classList.add('warning');
+    else if (type === 'error') quizNotificationEl.classList.add('error');
+    quizNotificationEl.classList.add('show');
+    setTimeout(() => quizNotificationEl.classList.remove('show'), 5000);
+}
+
+function showRegistrationPage() { showPage('registration-page'); }
+
+// Generate access code: MPX-XXXYY
+function generateAccessCode() {
+    const digits = Math.floor(100 + Math.random() * 900);
+    const letters = String.fromCharCode(65 + Math.floor(Math.random()*26)) + String.fromCharCode(65 + Math.floor(Math.random()*26));
+    return `MPX-${digits}${letters}`;
+}
+
+function accessQuiz(inputCode) {
+    quizAccessErrorBox.style.display = 'none';
+    const storedStudentCode = localStorage.getItem('studentAccessCode');
+    if (inputCode === studentAccessCode) {
+        showQuizNotification('Access Granted', 'Welcome! You can now start the quiz.', 'info');
+        startQuiz('MPX-BIO-01-2026', 'Student', inputCode);
+    } else {
+        quizAccessErrorBox.style.display = 'block';
+    }
+}
+
+// ---------- BACKEND INTEGRATION ----------
+function startQuizSession(accessCode, quizId) {
+    const payload = { type: 'start_quiz', accessCode, quizId };
+    fetch(SHEET_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(e => console.error(e));
+}
+
+function sendLiveProgress() {
+    if (!studentAccessCode || !currentQuizId) return;
+    let correct = 0, incorrect = 0, unanswered = 0;
+    quizData.forEach((q, index) => {
+        const ans = userAnswers[index];
+        if (ans === null) unanswered++;
+        else if (ans === q.correctAnswer) correct++;
+        else incorrect++;
+    });
+    const payload = { type: 'live_progress', accessCode: studentAccessCode, quizId: currentQuizId, correct, incorrect, unanswered };
+    fetch(SHEET_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(e => console.error(e));
+}
+
+// ------------------------------------------------
+function startQuiz(quizId, userType, code) {
+    currentQuizId = quizId;
+    // Use original order – no shuffling
+    quizData = originalQuizData.map(q => ({ ...q })); // shallow copy enough
+    currentQuestion = 0;
+    userAnswers = Array(quizData.length).fill(null);
+    timeLeft = quizData.length * TIME_PER_MCQ;
+    localStorage.setItem('lastAccessCode', code);
+    showPage('quiz-page');
+    initQuiz();
+    startQuizSession(code, quizId);
+}
+
+function initQuiz() {
+    quizSubjectEl.textContent = QUIZ_SUBJECT;
+    document.getElementById('quiz-duration').textContent = Math.floor(quizData.length * TIME_PER_MCQ / 60);
+    websiteLinkEl.href = WEBSITE_LINK;
+    whatsappContactLinkEl.href = 'https://wa.me/' + WHATSAPP_CONTACT;
+    quizTitleEl.textContent = `Test - ID: ${currentQuizId}`;
+    renderQuestionNav();
+    renderQuestion();
+    if (totalTimeInterval) clearInterval(totalTimeInterval);
+    totalTimeInterval = setInterval(updateTotalTimer, 1000);
+}
+
+function updateTotalTimer() {
+    if (timeLeft > 0) { timeLeft--; const minutes = Math.floor(timeLeft/60); const seconds = timeLeft%60; totalTimerEl.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`; }
+    else { clearInterval(totalTimeInterval); submitTest(true); }
+}
+
+function renderQuestionNav() {
+    questionNavEl.innerHTML = '';
+    quizData.forEach((_, index) => {
+        const navItem = document.createElement('div');
+        navItem.classList.add('question-nav-item');
+        navItem.textContent = index + 1;
+        navItem.onclick = () => navigateQuestion(index);
+        if (index === currentQuestion) navItem.classList.add('current');
+        else if (userAnswers[index] !== null) navItem.classList.add('solved');
+        else if (userAnswers.slice(0, index).some(ans => ans !== null) || index < currentQuestion) navItem.classList.add('visited');
+        questionNavEl.appendChild(navItem);
+    });
+    updateProgressBar();
+}
+
+function updateProgressBar() { const solvedCount = userAnswers.filter(a => a !== null).length; quizProgressEl.style.width = `${(solvedCount / quizData.length) * 100}%`; }
+
+function renderQuestion() {
+    reasoningEl.style.display = 'none'; reasoningBtn.classList.add('disabled');
+    const question = quizData[currentQuestion];
+    questionTextEl.textContent = `${currentQuestion + 1}. ${question.question}`;
+    optionsContainerEl.innerHTML = '';
+    question.options.forEach((opt, index) => {
+        const optionEl = document.createElement('div');
+        optionEl.classList.add('option');
+        optionEl.textContent = opt;
+        if (userAnswers[currentQuestion] !== null) {
+            optionEl.style.pointerEvents = 'none';
+            if (userAnswers[currentQuestion] === index) optionEl.classList.add('selected');
+        } else { optionEl.onclick = () => selectOption(index); }
+        optionsContainerEl.appendChild(optionEl);
+    });
+    renderQuestionNav();
+}
+
+function selectOption(optionIndex) {
+    userAnswers[currentQuestion] = optionIndex;
+    document.querySelectorAll('.option').forEach(opt => { opt.style.pointerEvents = 'none'; opt.classList.remove('selected'); });
+    const options = document.querySelectorAll('.option');
+    options[optionIndex].classList.add('selected');
+    reasoningBtn.classList.remove('disabled');
+    renderQuestionNav();
+    sendLiveProgress();
+}
+
+function toggleReasoning() {
+    if (reasoningBtn.classList.contains('disabled')) return;
+    const question = quizData[currentQuestion];
+    if (reasoningEl.style.display === 'block') reasoningEl.style.display = 'none';
+    else {
+        let html = `<strong>Correct answer explanation:</strong> ${question.reasoning}<br><br>`;
+        question.incorrectReasons.forEach((reason, i) => { if (reason) html += `<strong>Incorrect option ${String.fromCharCode(65 + i)}:</strong> ${reason}<br>`; });
+        reasoningTextEl.innerHTML = html;
+        reasoningEl.style.display = 'block';
+    }
+}
+
+function navigateQuestion(direction) {
+    let nextIndex;
+    if (typeof direction === 'number') nextIndex = direction;
+    else if (direction === 'next') nextIndex = (currentQuestion + 1) % quizData.length;
+    else if (direction === 'prev') nextIndex = (currentQuestion - 1 + quizData.length) % quizData.length;
+    else return;
+    if (nextIndex === currentQuestion) return;
+    currentQuestion = nextIndex;
+    renderQuestion();
+}
+
+// Helper to format date
+function formatDate(date) {
+    const d = new Date(date);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()} ${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
+}
+
+// Render DMC on results page
+function renderDMC(correct, incorrect, unanswered, totalQuestions, totalScore, totalMarks, percentage, remarks) {
+    const student = studentData;
+    const gender = student['Gender'] || 'Male';
+    const title = gender.toLowerCase() === 'female' ? 'Ms.' : 'Mr.';
+    const relation = gender.toLowerCase() === 'female' ? 'Daughter of' : 'Son of';
+    const pronoun = gender.toLowerCase() === 'female' ? 'She' : 'He';
+    const possessive = gender.toLowerCase() === 'female' ? 'Her' : 'His';
+    const formattedDate = formatDate(new Date());
+
+    const dmcHTML = `
+        <p>It is hereby certified that <strong>${title} ${student['Student Name'] || 'Student'}</strong>, ${relation.toLowerCase()} <strong>${student['Father Name'] || ''}</strong>, holding MedPlex Registration ID <strong>${studentAccessCode}</strong>, has successfully appeared in the computerized assessment conducted by MedPlex Academy.</p>
+        <p>${pronoun} participated in Test ID <strong>${currentQuizId}</strong> on <strong>${formattedDate}</strong>. Based on the automated evaluation of the submitted responses, ${pronoun.toLowerCase()} has secured a total score of <strong>${totalScore} out of ${totalMarks}</strong>, equating to a percentage of <strong>${percentage}%</strong>.</p>
+        <p>The academic council has graded ${possessive.toLowerCase()} performance as <strong>"${remarks.toUpperCase()}"</strong> based on the standard grading criteria. Detailed analytics, including subject-wise breakdown and solution reasoning, have been updated in the student's personal portal history.</p>
+        <p style="margin-top:10px; font-size: 0.5rem; color: #7f8c8d;"><em>Note: This is a system-generated Detailed Marks Certificate (DMC) and does not require a physical signature. The result is stored permanently in the MedPlex centralized database.</em></p>
+        <p style="text-align: center; margin-top: 6px;"><strong>Support:</strong> ${SUPPORT_EMAIL}</p>
+    `;
+    dmcContentEl.innerHTML = dmcHTML;
+}
+
+function submitTest(isTimeout = false) {
+    if (!isTimeout && !confirm('Are you sure you want to submit the quiz?')) return;
+    clearInterval(totalTimeInterval);
+    let correct = 0, incorrect = 0, unanswered = 0;
+    quizData.forEach((q, index) => {
+        const ans = userAnswers[index];
+        if (ans === null) unanswered++;
+        else if (ans === q.correctAnswer) correct++;
+        else incorrect++;
+    });
+    const totalQuestions = quizData.length;
+    const totalScore = (correct * MARK_PER_MCQ) - (incorrect * NEGATIVE_MARKING);
+    const totalMarks = totalQuestions * MARK_PER_MCQ;
+    const percentage = ((totalScore / totalMarks) * 100).toFixed(2);
+    let remarks = 'Participated';
+    if (percentage >= 90) remarks = 'Outstanding';
+    else if (percentage >= 70) remarks = 'Very Good';
+    else if (percentage >= 50) remarks = 'Average';
+    else remarks = 'Needs Improvement';
+
+    const savedStudentData = JSON.parse(localStorage.getItem('studentData') || '{}');
+    const lastAccessCode = localStorage.getItem('lastAccessCode') || 'N/A';
+
+    renderDMC(correct, incorrect, unanswered, totalQuestions, totalScore, totalMarks, percentage, remarks);
+
+    if (lastAccessCode && lastAccessCode !== 'N/A') {
+        const resultsDataToSend = { type: 'quiz_result', accessCode: lastAccessCode, quizId: currentQuizId, totalScore: correct, totalMarks: totalQuestions, studentName: savedStudentData['Student Name'] || 'Unknown' };
+        fetch(SHEET_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(resultsDataToSend) }).catch(e => console.error(e));
+    }
+
+    showQuizNotification('Quiz Completed!', `Your score has been recorded.`, 'info');
+    showPage('results-page');
+}
+
+function restartTest() {
+    if (confirm('Restart full test? Current progress lost.')) {
+        quizData = originalQuizData.map(q => ({ ...q }));
+        currentQuestion = 0; userAnswers = Array(quizData.length).fill(null);
+        timeLeft = quizData.length * TIME_PER_MCQ;
+        showPage('quiz-page'); initQuiz();
+        if (studentAccessCode) startQuizSession(studentAccessCode, currentQuizId);
+    }
+}
+
+function viewHistoryPlaceholder() { showQuizNotification('History', 'Test history feature coming soon. (Backend ready)', 'info'); }
+
+// ---------- MISTAKES VIEW ----------
+function showMistakes() {
+    // Build mistakes list: questions where answer is incorrect or unanswered
+    mistakesData = [];
+    quizData.forEach((q, idx) => {
+        const ans = userAnswers[idx];
+        const isCorrect = (ans !== null && ans === q.correctAnswer);
+        if (!isCorrect) {  // include incorrect and unanswered
+            mistakesData.push({
+                question: q.question,
+                options: q.options,
+                studentAnswer: ans,  // null if unanswered
+                correctAnswer: q.correctAnswer,
+                reasoning: q.reasoning,
+                incorrectReasons: q.incorrectReasons
+            });
+        }
+    });
+    mcqDisplayMode = 'mistakes';
+    currentMcqPage = 0;
+    mcqsPageTitle.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Mistakes Analysis';
+    showPage('all-mcqs-page');
+    renderAllMcqs();
+}
+
+function showAllMcqsPage() {
+    mcqDisplayMode = 'all';
+    currentMcqPage = 0;
+    mcqsPageTitle.innerHTML = '<i class="fas fa-list-alt"></i> All MCQs and Solutions';
+    showPage('all-mcqs-page');
+    renderAllMcqs();
+}
+
+function renderAllMcqs() {
+    const dataArray = (mcqDisplayMode === 'all') ? originalQuizData : mistakesData;
+    const start = currentMcqPage * mcqsPerPage;
+    const pageData = dataArray.slice(start, start + mcqsPerPage);
+    
+    let htmlStr = '';
+    pageData.forEach((item, idx) => {
+        const globalIdx = start + idx + 1;
+        let optionsHtml = '';
+        if (mcqDisplayMode === 'all') {
+            // show all options, mark correct one
+            item.options.forEach((opt, optIdx) => {
+                const correctClass = (optIdx === item.correctAnswer) ? 'correct' : '';
+                optionsHtml += `<div class="all-mcq-option ${correctClass}">${String.fromCharCode(65+optIdx)}) ${opt}</div>`;
+            });
+        } else {
+            // mistakes mode: show student answer and correct answer
+            item.options.forEach((opt, optIdx) => {
+                let classes = '';
+                if (optIdx === item.correctAnswer) classes += ' correct';
+                if (item.studentAnswer !== null && optIdx === item.studentAnswer && optIdx !== item.correctAnswer) classes += ' wrong-answer';
+                let marker = '';
+                if (item.studentAnswer !== null && optIdx === item.studentAnswer) {
+                    marker = ' (Your answer)';
+                }
+                if (optIdx === item.correctAnswer) {
+                    marker += ' (Correct)';
+                }
+                optionsHtml += `<div class="all-mcq-option ${classes}">${String.fromCharCode(65+optIdx)}) ${opt}${marker}</div>`;
+            });
+            if (item.studentAnswer === null) {
+                optionsHtml += `<div><em style="color:red;">Not answered</em></div>`;
+            }
+        }
+        
+        const incorrectReasonsHtml = item.incorrectReasons.map((reason, i) => 
+            reason ? `<div><strong>Incorrect option ${String.fromCharCode(65+i)}:</strong> ${reason}</div>` : ''
+        ).join('');
+        
+        htmlStr += `<div class="all-mcq-item">
+            <div class="question-text">${globalIdx}. ${item.question}</div>
+            <div class="all-mcq-options">${optionsHtml}</div>
+            <div class="all-mcq-reasoning">
+                <div><strong>Reasoning:</strong> ${item.reasoning}</div>
+                ${incorrectReasonsHtml}
+            </div>
+        </div>`;
+    });
+    
+    allMcqsList.innerHTML = htmlStr;
+    const totalPages = Math.ceil(dataArray.length / mcqsPerPage);
+    document.getElementById('pageIndicator').textContent = `Page ${currentMcqPage+1} / ${totalPages}`;
+    document.getElementById('prevPageBtn').disabled = currentMcqPage === 0;
+    document.getElementById('nextPageBtn').disabled = currentMcqPage === totalPages - 1;
+}
+
+function changeMcqPage(delta) {
+    const dataArray = (mcqDisplayMode === 'all') ? originalQuizData : mistakesData;
+    const totalPages = Math.ceil(dataArray.length / mcqsPerPage);
+    const newPage = currentMcqPage + delta;
+    if (newPage >= 0 && newPage < totalPages) { currentMcqPage = newPage; renderAllMcqs(); }
+}
+
+function handleRegistration() {
+    const sName = document.getElementById('studentName').value.trim();
+    const fName = document.getElementById('fatherName').value.trim();
+    const gender = document.getElementById('gender').value;
+    const email = document.getElementById('email').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const city = document.getElementById('city').value.trim();
+    
+    if (!sName || !fName || !gender || !email || !mobile || !city) {
+        showQuizNotification('Registration Error', 'Please fill all details including gender.', 'error');
+        return;
+    }
+    
+    const generatedCode = generateAccessCode();
+    studentAccessCode = generatedCode;
+    studentData = {
+        'Student Name': sName, 'Father Name': fName, 'Gender': gender,
+        'Email': email, 'Mobile': mobile, 'City': city
+    };
+
+    const registrationDataToSend = { type: 'register', accessCode: generatedCode, studentName: sName, fatherName: fName, gender, email, mobile, city };
+    fetch(SHEET_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(registrationDataToSend) }).catch(e => console.error(e));
+    
+    localStorage.setItem('studentAccessCode', generatedCode);
+    localStorage.setItem('studentData', JSON.stringify(studentData));
+    
+    const registrations = JSON.parse(localStorage.getItem('wcwRegistrations') || '[]');
+    registrations.push({ ...studentData, accessCode: generatedCode, timestamp: new Date().toISOString() });
+    localStorage.setItem('wcwRegistrations', JSON.stringify(registrations));
+    
+    showQuizNotification('Registration Successful', `Your MedPlex ID: ${generatedCode}`, 'info');
+    startQuiz('MPX-BIO-01-2026', 'Student', generatedCode);
+}
+</script>
+</body>
+</html>
+                            
